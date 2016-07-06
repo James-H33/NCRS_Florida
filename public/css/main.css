@@ -148,18 +148,19 @@ body {
   width: auto;
   height: auto; }
   .header-links ul {
-    width: 150px;
+    width: 200px;
     list-style: none;
     margin-left: 20px; }
   .header-links li {
     width: auto;
-    line-height: 30px; }
+    padding-left: 20px;
+    line-height: 40px; }
   .header-links a {
     color: #e6e7e7;
     font-size: 18px;
     font-weight: bold;
     position: relative;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     text-decoration: none; }
 
 @media(min-width: 800px) {
@@ -177,6 +178,7 @@ body {
     .header-links li {
       width: auto;
       display: inline-block;
+      line-height: 30px;
       margin: 0 10px; }
       .header-links li:hover a {
         color: #262626; }
