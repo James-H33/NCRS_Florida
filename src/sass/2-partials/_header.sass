@@ -126,11 +126,17 @@ body
   width: auto
   height: 100px
   text-align: center
-  padding-top: 50px
+  padding: 50px 0 20px 0
 
   h1
     color: $dark-text
     font-size: 20px
+    &:first-of-type
+      display: none
+
+
+  img
+    width: 75%
 
 @media(min-width: 1000px)
 
@@ -139,7 +145,7 @@ body
     height: 100%
     float: left
     display: table
-    padding-top: 0
+    padding: 0
 
     h1
       color: $dark-text
@@ -147,6 +153,11 @@ body
       padding: 0 3px
       display: table-cell
       vertical-align: middle
+      &:first-of-type
+        display: table-cell
+
+    img
+      display: none
 
 
 

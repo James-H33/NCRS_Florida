@@ -112,10 +112,14 @@ body {
   width: auto;
   height: 100px;
   text-align: center;
-  padding-top: 50px; }
+  padding: 50px 0 20px 0; }
   .header-brand h1 {
     color: #373a3c;
     font-size: 20px; }
+    .header-brand h1:first-of-type {
+      display: none; }
+  .header-brand img {
+    width: 75%; }
 
 @media(min-width: 1000px) {
   .header-brand {
@@ -123,13 +127,17 @@ body {
     height: 100%;
     float: left;
     display: table;
-    padding-top: 0; }
+    padding: 0; }
     .header-brand h1 {
       color: #373a3c;
       font-size: 20px;
       padding: 0 3px;
       display: table-cell;
-      vertical-align: middle; } }
+      vertical-align: middle; }
+      .header-brand h1:first-of-type {
+        display: table-cell; }
+    .header-brand img {
+      display: none; } }
 .header-links {
   width: auto;
   height: auto; }
