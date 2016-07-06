@@ -132,8 +132,8 @@ body {
     padding: 0; }
     .header-brand h1 {
       color: #373a3c;
-      font-size: 20px;
-      padding: 0 3px;
+      font-size: 25px;
+      padding: 0 5px 0 3px;
       display: table-cell;
       vertical-align: middle; }
       .header-brand h1:first-of-type {
@@ -154,9 +154,8 @@ body {
     color: #373a3c;
     font-size: 15px;
     font-weight: bold;
+    position: relative;
     text-decoration: none; }
-    .header-links a:hover {
-      border-bottom: 2px solid #373a3c; }
 
 @media(min-width: 1000px) {
   .header-links {
@@ -176,11 +175,21 @@ body {
       color: #373a3c;
       font-size: 15px;
       font-weight: bold;
+      position: relative;
       text-decoration: none; }
-      .header-links a:hover {
-        border-bottom: 2px solid #373a3c; } }
-.active-link {
-  border-bottom: 2px solid #373a3c; }
+      .header-links a:after {
+        content: "";
+        display: block;
+        border-bottom: 2px solid #373a3c;
+        width: 0;
+        position: absolute;
+        left: 0;
+        -webkit-transition: all 350ms ease;
+        transition: all 350ms ease; }
+      .header-links a:hover:after {
+        width: 40%; } }
+.active-link:after {
+  width: 40%; }
 
 .index-wrapper {
   width: 100%;
@@ -188,26 +197,27 @@ body {
   background-image: url("http://img01.deviantart.net/05af/i/2005/283/4/f/1969_corvette_stingray_by_teicart.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
-  padding-top: 60px; }
+  background-position: center; }
+
+.index-overlay {
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.2); }
 
 .index-display {
   width: 100%;
-  height: 100%; }
-  .index-display h1 {
-    color: #373a3c;
-    font-size: 50px;
-    padding: 30px 10px; }
+  height: 100%;
+  padding-top: 60px; }
 
-@media(min-width: 1000px) {
-  .index-display h1 {
-    font-size: 70px; } }
 .greeter-wrapper {
   width: auto;
-  overflow: hidden; }
+  overflow: hidden;
+  padding-left: 0px; }
 
+@media(min-width: 769px) {}
 .greeter {
-  font-size: 60px;
+  color: #373a3c;
+  font-size: 40px;
   font-weight: bold;
   display: inline-block;
   margin: 0 10px;
@@ -216,7 +226,79 @@ body {
   transform: translateY(70px);
   -webkit-transition: all 1000ms ease;
   transition: all 1000ms ease; }
+  .greeter:nth-of-type(3) {
+    color: #d2a26c; }
   .greeter.active-greeter {
     opacity: 1;
     -webkit-transform: translateY(0);
     transform: translateY(0); }
+
+@media(min-width: 500px) {
+  .greeter {
+    font-size: 50px;
+    display: inline-block; } }
+@media(min-width: 769px) {
+  .greeter {
+    font-size: 65px;
+    display: inline-block; } }
+.about-wrapper {
+  width: 100%;
+  height: auto; }
+
+.about-display {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 50px 0; }
+
+.about-title {
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px 0 20px; }
+  .about-title h2 {
+    color: #373a3c;
+    font-size: 22px; }
+
+.about-info {
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  padding-bottom: 20px; }
+  .about-info p {
+    color: #373a3c;
+    font-size: 14px;
+    letter-spacing: 0.4px;
+    line-height: 25px; }
+
+.about-join-button button {
+  width: 150px;
+  height: 32px;
+  background: #373a3c;
+  box-shadow: 0 3px 5px #373a3c;
+  border: none;
+  border-radius: 4px;
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: all 450ms ease;
+  transition: all 450ms ease; }
+  .about-join-button button:hover {
+    -webkit-transform: translateY(-3px);
+    transform: translateY(-3px); }
+    .about-join-button button:hover a {
+      color: #e6e7e7; }
+  .about-join-button button a {
+    color: #d2a26c;
+    font-size: 16px;
+    text-decoration: none;
+    padding: 10px 20px;
+    letter-spacing: 1px; }
+
+@media(min-width: 769px) {
+  .about-title h2 {
+    color: #373a3c;
+    font-size: 25px; }
+
+  .about-info p {
+    color: #373a3c;
+    font-size: 16px; } }

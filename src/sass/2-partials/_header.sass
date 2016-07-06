@@ -137,6 +137,7 @@ body
       display: none
 
 
+
   img
     width: 75%
 
@@ -151,12 +152,13 @@ body
 
     h1
       color: $dark-text
-      font-size: 20px
-      padding: 0 3px
+      font-size: 25px
+      padding: 0 5px 0 3px
       display: table-cell
       vertical-align: middle
       &:first-of-type
         display: table-cell
+
 
     img
       display: none
@@ -180,9 +182,9 @@ body
     color: $dark-text
     font-size: 15px
     font-weight: bold
+    position: relative
     text-decoration: none
-    &:hover
-      border-bottom: 2px solid $dark-text
+
 
 @media(min-width: 1000px)
 
@@ -206,9 +208,21 @@ body
       color: $dark-text
       font-size: 15px
       font-weight: bold
+      position: relative
       text-decoration: none
-      &:hover
+      &:after
+        content: ''
+        display: block
         border-bottom: 2px solid $dark-text
+        width: 0
+        position: absolute
+        left: 0
+        transition: $fast-trans
+
+      &:hover
+        &:after
+          width: 40%
 
 .active-link
-  border-bottom: 2px solid $dark-text
+  &:after
+    width: 40%
