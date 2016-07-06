@@ -30,4 +30,37 @@
 
   Menu.init();
 
+})();
+
+(function() {
+
+  const Greeter = {
+    init: function() {
+      this.cacheDOM();
+      this.bindEvents();
+    },
+    cacheDOM: function() {
+      this.$window = $(window);
+      this.$greeterWrapper = $('.greeter-wrapper');
+      this.$greeter        = this.$greeterWrapper.find('.greeter');
+
+    },
+    bindEvents: function() {
+      this.$window.on('load', this.activateGreeter.bind(this));
+    },
+    activateGreeter: function() {
+      for(var i = 0; i < this.$greeter.length; i++) {
+        this.doSetTimeout(i);
+      }
+    },
+    doSetTimeout: function(i) {
+      setTimeout(() => {
+        this.$greeter[i].classList.add('active-greeter');
+      }, 500 * i)
+    },
+
+  }
+
+  Greeter.init()
+
 })()

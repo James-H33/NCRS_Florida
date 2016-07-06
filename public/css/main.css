@@ -14,7 +14,8 @@ body {
   -webkit-transform: translateX(0);
   transform: translateX(0);
   -webkit-transition: all 450ms ease;
-  transition: all 450ms ease; }
+  transition: all 450ms ease;
+  z-index: 10; }
 
 .topbar-display {
   width: calc(100% - 20px);
@@ -63,7 +64,8 @@ body {
   position: fixed;
   right: -220px;
   -webkit-transition: all 450ms ease;
-  transition: all 450ms ease; }
+  transition: all 450ms ease;
+  z-index: 100; }
   .header-wrapper.active-menu {
     right: 0;
     box-shadow: 0 2px 8px rgba(41, 41, 41, 0.4); }
@@ -200,3 +202,21 @@ body {
 @media(min-width: 1000px) {
   .index-display h1 {
     font-size: 70px; } }
+.greeter-wrapper {
+  width: auto;
+  overflow: hidden; }
+
+.greeter {
+  font-size: 60px;
+  font-weight: bold;
+  display: inline-block;
+  margin: 0 10px;
+  opacity: 0;
+  -webkit-transform: translateY(70px);
+  transform: translateY(70px);
+  -webkit-transition: all 1000ms ease;
+  transition: all 1000ms ease; }
+  .greeter.active-greeter {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+    transform: translateY(0); }

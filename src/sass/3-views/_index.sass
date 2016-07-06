@@ -6,7 +6,6 @@
     size: cover
     repeat: no-repeat
     position: center
-
   padding-top: 60px
 
 .index-display
@@ -23,3 +22,20 @@
   .index-display
     h1
       font-size: 70px
+
+.greeter-wrapper
+  width: auto
+  overflow: hidden
+
+.greeter
+  font-size: 60px
+  font-weight: bold
+  display: inline-block
+  margin: 0 10px
+  opacity: 0
+  transform: translateY(70px)
+  transition: $long-trans
+
+  &.active-greeter
+    opacity: 1
+    transform: translateY(0)
