@@ -1,0 +1,61 @@
+.contacts-intro-wrapper
+  width: 100%
+  height: auto
+
+.contacts-intro-display
+  width: 98%
+  height: 100%
+  max-width: 1220px
+  margin: 0 auto
+  padding-top: 60px
+  text-align: center
+
+  h2
+    width: 90%
+    max-width: 769px
+    font-family: 'Abel'
+    padding: 10px 0
+    margin: 0 auto
+    border-bottom: 1px solid $gold
+    letter-spacing: 2px
+
+  ul
+    list-style: none
+    padding-top: 30px
+
+  li
+    width: 100%
+    float: left
+    text-align: center
+    margin: 30px 0
+
+    h3
+      color: $dark-text
+      font-size: 14px
+      font-weight: normal
+      margin: 5px 0
+      &:nth-of-type(1)
+        font-weight: bold
+        font-size: 18px
+
+  figure
+    width: 50%
+    margin: 0 auto
+
+    img
+      width: 100%
+
+@media(min-width: 500px)
+
+  .contacts-intro-display
+    h2
+      font-size: 40px
+      padding: 30px 0
+    li
+      width: 50%
+
+@media(min-width: 1000px)
+
+  .contacts-intro-display
+    li
+      width: 33.33%

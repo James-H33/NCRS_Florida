@@ -32,6 +32,7 @@
   h2
     color: $dark-text
     font-size: 25px
+    font-family: 'Abel'
     padding: 5px 0
     letter-spacing: 2px
 
@@ -46,7 +47,9 @@
     vertical-align: top
     display: inline-block
 
-    h2
+    h2:nth-of-type(2)
+      font-size: 35px
+
 
     img
       width: 50%
@@ -60,7 +63,9 @@
 
   h2
     color: $dark-text
+    font-family: 'Abel'
     padding: 5px 0
+    letter-spacing: 2px
 
   ul
     padding: 15px 0
@@ -71,7 +76,7 @@
 
   p
     color: $light-text-color
-    font-size: 13px
+    font-size: 14px
     line-height: 30px
 
 @media(min-width: 769px)
@@ -85,6 +90,7 @@
 
 .member-button
   padding: 30px 0
+  text-align: center
   button
     width: 120px
     height: 40px
@@ -94,6 +100,20 @@
     transform: translateY(0)
     transition: $mid-trans
     &:hover
-      color: #fff
       background: $gold
       transform: translateY(-3px)
+      a
+        color: #fff
+
+    a
+      color: $gold
+      font-size: 12px
+      font-weight: bold
+      text-decoration: none
+      padding: 10px 10px
+      letter-spacing: 1px
+
+@media(min-width: 769px)
+
+  .member-button
+    text-align: left

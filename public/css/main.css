@@ -29,7 +29,9 @@ body {
   .topbar-brand h1 {
     color: #262626;
     font-size: 20px;
+    font-family: "Abel";
     display: table-cell;
+    letter-spacing: 2px;
     vertical-align: middle; }
 
 .menu-button {
@@ -120,6 +122,7 @@ body {
   .header-brand h1 {
     color: #262626;
     font-size: 22px;
+    font-family: "Abel";
     letter-spacing: 2px; }
     .header-brand h1:first-of-type {
       display: none; }
@@ -135,9 +138,9 @@ body {
     padding: 0; }
     .header-brand h1 {
       color: #262626;
-      font-size: 22px;
+      font-size: 25px;
       padding: 0 5px 0 3px;
-      letter-spacing: 1px;
+      letter-spacing: 2px;
       display: table-cell;
       vertical-align: middle; }
       .header-brand h1:first-of-type {
@@ -263,14 +266,15 @@ body {
   padding-top: 60px; }
 
 .greeter-wrapper {
-  width: auto;
+  width: 95%;
+  margin: 0 auto;
   overflow: hidden;
   padding: 40px 0; }
 
 @media(min-width: 769px) {}
 .greeter {
   color: #262626;
-  font-size: 40px;
+  font-size: 45px;
   font-weight: bold;
   display: block;
   text-shadow: 0 2px 5px #262626;
@@ -293,7 +297,7 @@ body {
 
 @media(min-width: 500px) {
   .greeter {
-    font-size: 50px;
+    font-size: 55px;
     display: block; } }
 @media(min-width: 769px) {
   .greeter {
@@ -328,7 +332,8 @@ body {
   padding: 20px 0 20px; }
   .about-title h2 {
     color: #262626;
-    font-size: 22px; }
+    font-size: 28px;
+    font-family: "Abel"; }
 
 .about-info {
   width: 95%;
@@ -367,7 +372,7 @@ body {
 @media(min-width: 769px) {
   .about-title h2 {
     color: #262626;
-    font-size: 24px; }
+    font-size: 28px; }
 
   .about-info p {
     font-size: 14px; }
@@ -393,7 +398,8 @@ body {
   padding: 20px 0 20px; }
   .facebook-header h2 {
     color: #262626;
-    font-size: 24px; }
+    font-size: 28px;
+    font-family: "Abel"; }
   .facebook-header p {
     color: rgba(40, 26, 23, 0.6);
     font-size: 14px;
@@ -441,6 +447,9 @@ body {
   position: relative;
   padding-top: 30px; }
 
+.clear {
+  clear: both; }
+
 .membership-intro-wrapper {
   width: 100%;
   height: auto; }
@@ -470,6 +479,7 @@ body {
   .membership-header h2 {
     color: #262626;
     font-size: 25px;
+    font-family: "Abel";
     padding: 5px 0;
     letter-spacing: 2px; }
   .membership-header img {
@@ -481,6 +491,8 @@ body {
     width: 49%;
     vertical-align: top;
     display: inline-block; }
+    .membership-header h2:nth-of-type(2) {
+      font-size: 35px; }
     .membership-header img {
       width: 50%;
       padding: 30px 0; } }
@@ -491,7 +503,9 @@ body {
   padding: 0; }
   .membership-info h2 {
     color: #262626;
-    padding: 5px 0; }
+    font-family: "Abel";
+    padding: 5px 0;
+    letter-spacing: 2px; }
   .membership-info ul {
     padding: 15px 0;
     padding-left: 20px; }
@@ -499,7 +513,7 @@ body {
     padding: 5px 0 5px 10px; }
   .membership-info p {
     color: rgba(40, 26, 23, 0.6);
-    font-size: 13px;
+    font-size: 14px;
     line-height: 30px; }
 
 @media(min-width: 769px) {
@@ -509,7 +523,8 @@ body {
     border-left: 1px solid #d2a26c;
     padding-left: 30px; } }
 .member-button {
-  padding: 30px 0; }
+  padding: 30px 0;
+  text-align: center; }
   .member-button button {
     width: 120px;
     height: 40px;
@@ -521,7 +536,69 @@ body {
     -webkit-transition: all 450ms ease;
     transition: all 450ms ease; }
     .member-button button:hover {
-      color: #fff;
       background: #d2a26c;
       -webkit-transform: translateY(-3px);
       transform: translateY(-3px); }
+      .member-button button:hover a {
+        color: #fff; }
+    .member-button button a {
+      color: #d2a26c;
+      font-size: 12px;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 10px 10px;
+      letter-spacing: 1px; }
+
+@media(min-width: 769px) {
+  .member-button {
+    text-align: left; } }
+.contacts-intro-wrapper {
+  width: 100%;
+  height: auto; }
+
+.contacts-intro-display {
+  width: 98%;
+  height: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  padding-top: 60px;
+  text-align: center; }
+  .contacts-intro-display h2 {
+    width: 90%;
+    max-width: 769px;
+    font-family: "Abel";
+    padding: 10px 0;
+    margin: 0 auto;
+    border-bottom: 1px solid #d2a26c;
+    letter-spacing: 2px; }
+  .contacts-intro-display ul {
+    list-style: none;
+    padding-top: 30px; }
+  .contacts-intro-display li {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin: 30px 0; }
+    .contacts-intro-display li h3 {
+      color: #262626;
+      font-size: 14px;
+      font-weight: normal;
+      margin: 5px 0; }
+      .contacts-intro-display li h3:nth-of-type(1) {
+        font-weight: bold;
+        font-size: 18px; }
+  .contacts-intro-display figure {
+    width: 50%;
+    margin: 0 auto; }
+    .contacts-intro-display figure img {
+      width: 100%; }
+
+@media(min-width: 500px) {
+  .contacts-intro-display h2 {
+    font-size: 40px;
+    padding: 30px 0; }
+  .contacts-intro-display li {
+    width: 50%; } }
+@media(min-width: 1000px) {
+  .contacts-intro-display li {
+    width: 33.33%; } }
