@@ -66,3 +66,33 @@
 
   Greeter.init();
 })();
+
+(function () {
+
+  var IndexSlide = {
+    init: function init() {
+      this.cacheDOM();
+      this.bindEvents();
+    },
+    cacheDOM: function cacheDOM() {
+      this.$body = $('body');
+      this.$window = $(window);
+      this.$pageSlideBtn = this.$body.find('.page-slide-button');
+      this.$aboutWrapper = this.$body.find('.about-wrapper');
+    },
+    bindEvents: function bindEvents() {
+      this.$pageSlideBtn.on('click', this.slidePage.bind(this));
+      this.$window.on('scroll', this.listener.bind(this));
+    },
+    slidePage: function slidePage() {
+      $('html, body').animate({
+        scrollTop: this.$aboutWrapper.offset().top
+      }, 1200);
+    },
+    listener: function listener() {
+      this.$x = this.$body.scrollTop();
+    }
+  };
+
+  IndexSlide.init();
+})();
