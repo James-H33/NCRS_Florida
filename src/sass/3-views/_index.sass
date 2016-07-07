@@ -4,8 +4,9 @@
 .index-wrapper
   width: 100%
   height: 100vh
+  min-height: 450px
   background:
-    image: url('http://img01.deviantart.net/05af/i/2005/283/4/f/1969_corvette_stingray_by_teicart.jpg')
+    image: url('http://assets.blog.hemmings.com/wp-content/uploads//2013/04/DaytonaBeach1957_1500.jpg')
     size: cover
     repeat: no-repeat
     position: 50% 0%
@@ -19,18 +20,18 @@
 .index-overlay
   width: 100%
   height: 100%
-  background: rgba(30, 30, 30, 0.2)
+  background: rgba(30, 30, 30, 0.5)
 
 .index-display
   width: 100%
   height: 100%
-  padding-top: 60px
+  padding-top: 100px
 
 
 
 
 .greeter-wrapper
-  width: 95%
+  width: 90%
   margin: 0 auto
   overflow: hidden
   padding: 40px 0
@@ -40,21 +41,16 @@
   .greeter-wrapper
 
 .greeter
-  color: $dark-text
-  font-size: 45px
+  color: $off-white
+  font-size: 60px
+  letter-spacing: 3px
   font-weight: bold
   display: block
-  text-shadow: 0 2px 5px $dark-text
+  text-shadow: 0 2px 5px $richer-text
   margin: 5px 10px
   opacity: 0
   transform: translateY(70px)
   transition: $long-trans
-  &:nth-of-type(2)
-    color: #d2a26c
-  &:nth-of-type(3)
-    color: #d2a26c
-  &:nth-of-type(4)
-    color: #d2a26c
 
   &.active-greeter
     opacity: 1
@@ -63,13 +59,13 @@
 @media(min-width: 500px)
 
   .greeter
-    font-size: 55px
+    font-size: 80px
     display: block
 
 @media(min-width: 769px)
 
   .greeter
-    font-size: 65px
+    font-size: 100px
 
 ////////////////////// Section About //////////////////////////////
 
