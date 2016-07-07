@@ -4,6 +4,8 @@
 
 body {
   font-family: Open Sans; }
+  body.active-menu {
+    overflow-y: hidden; }
 
 .topbar-wrapper {
   width: 100%;
@@ -85,7 +87,7 @@ body {
   height: 30px;
   display: initial;
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 10px;
   cursor: pointer; }
   .menu-close span {
@@ -315,8 +317,9 @@ body {
 
 @media(min-width: 769px) {
   .about-ncrs-wrapper {
-    width: 70%;
-    display: inline-block; } }
+    width: 60%;
+    display: inline-block;
+    margin-right: 8%; } }
 .about-title {
   width: 95%;
   height: auto;
@@ -455,8 +458,7 @@ body {
   width: 100%;
   height: auto;
   min-height: 500px;
-  padding: 40px 0 0 0;
-  border-bottom: 1px solid #d2a26c; }
+  padding: 40px 0 0 0; }
 
 @media(min-width: 769px) {
   .membership-join-wrapper {
@@ -544,6 +546,12 @@ body {
 @media(min-width: 769px) {
   .member-button {
     text-align: left; } }
+.border {
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px 0;
+  border-bottom: 1px solid #d2a26c; }
+
 .contacts-intro-wrapper {
   width: 100%;
   height: auto; }
@@ -556,13 +564,12 @@ body {
   padding-top: 60px;
   text-align: center; }
   .contacts-intro-display h2 {
-    width: 90%;
+    width: 80%;
     max-width: 769px;
     font-family: "Abel";
     padding: 10px 0;
     margin: 0 auto;
-    border-bottom: 1px solid #d2a26c;
-    letter-spacing: 2px; }
+    border-bottom: 1px solid #d2a26c; }
   .contacts-intro-display ul {
     list-style: none;
     padding-top: 30px; }
@@ -585,7 +592,8 @@ body {
     width: 50%;
     margin: 0 auto; }
     .contacts-intro-display figure img {
-      width: 100%; }
+      width: 100%;
+      box-shadow: 0px 2px 5px #535454; }
 
 @media(min-width: 500px) {
   .contacts-intro-display h2 {

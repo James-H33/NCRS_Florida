@@ -23,9 +23,11 @@
     },
     openMenu: function openMenu() {
       this.$headerWrapper.addClass('active-menu');
+      this.$body.addClass('active-menu');
     },
     closeMenu: function closeMenu() {
       this.$headerWrapper.removeClass('active-menu');
+      this.$body.removeClass('active-menu');
     }
   };
 
