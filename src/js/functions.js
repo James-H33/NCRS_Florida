@@ -119,14 +119,14 @@
     cacheDOM: function() {
       this.$body         = $('body');
       this.$window       = $(window);
-      this.$indexWrapper = this.$body.find('.index-wrapper');
+      this.$indexWrapper = this.$body.find('#index-wrapper');
     },
     bindEvents: function() {
       this.$window.on('load', this.loopImages.bind(this));
     },
     slideImages: function(i) {
       setTimeout(() => {
-        this.$indexWrapper.attr('class', 'index-wrapper')
+        this.$indexWrapper.removeClass();
         this.$indexWrapper.addClass(this.images[i]);
 
             if (i === 2) {

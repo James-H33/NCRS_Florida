@@ -113,7 +113,7 @@
     cacheDOM: function cacheDOM() {
       this.$body = $('body');
       this.$window = $(window);
-      this.$indexWrapper = this.$body.find('.index-wrapper');
+      this.$indexWrapper = this.$body.find('#index-wrapper');
     },
     bindEvents: function bindEvents() {
       this.$window.on('load', this.loopImages.bind(this));
@@ -122,7 +122,7 @@
       var _this2 = this;
 
       setTimeout(function () {
-        _this2.$indexWrapper.attr('class', 'index-wrapper');
+        _this2.$indexWrapper.removeClass();
         _this2.$indexWrapper.addClass(_this2.images[i]);
 
         if (i === 2) {
