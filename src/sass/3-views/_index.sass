@@ -274,26 +274,53 @@
 .clear
   clear: both
 
-.photo-one
-  opacity: 1
-  background:
-    image: url('http://assets.blog.hemmings.com/wp-content/uploads//2013/04/DaytonaBeach1957_1500.jpg')
-    size: cover
-    repeat: no-repeat
-    position: 50% 0%
+.index-carousel
+  width: 100%
+  height: 100vh
+  min-height: 450px
+  opacity: 0
+  position: absolute
+  transition: $longer-trans
+  background-attachment: initial
+  opacity: 0
+  z-index: -2
+  // background:
+  //   image: url('http://assets.blog.hemmings.com/wp-content/uploads//2013/04/DaytonaBeach1957_1500.jpg')
+  //   size: cover
+  //   repeat: no-repeat
+  //   position: 50% 0%
 
-.photo-two
-  opacity: 1
+.index-carousel-two
+  width: 100%
+  height: 100vh
+  min-height: 450px
+  opacity: 0
+  position: absolute
+  transition: $longer-trans
+  background-attachment: initial
+  opacity: 0
+  z-index: -2
   background:
     image: url('/imgs/56daytona.jpg')
     size: cover
     repeat: no-repeat
     position: 50% 0%
 
-.photo-three
-  opacity: 1
+.index-carousel-three
+  width: 100%
+  height: 100vh
+  min-height: 450px
+  opacity: 0
+  position: absolute
+  transition: $longer-trans
+  background-attachment: initial
+  opacity: 0
+  z-index: -2
   background:
     image: url('/imgs/ncrs-back.jpg')
     size: cover
     repeat: no-repeat
     position: 50% 0%
+
+.active-slide
+  opacity: 1

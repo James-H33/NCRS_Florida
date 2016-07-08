@@ -1,15 +1,18 @@
 include ./partials/header
 
-section#index-wrapper.about-one
+section#index-wrapper
+  div.index-carousel.active-slide(style="background: url('http://assets.blog.hemmings.com/wp-content/uploads//2013/04/DaytonaBeach1957_1500.jpg'); background-position: center; background-size: cover; background-repeat: no-repeat;").active-slide
+  div.index-carousel(style="background: url('/imgs/56daytona.jpg'); background-position: center; background-size: cover; background-repeat: no-repeat;")
+  div.index-carousel(style="background: url('/imgs/ncrs-back.jpg'); background-position: center; background-size: cover; background-repeat: no-repeat;")
   div.index-overlay
     div.index-display
       div.greeter-wrapper
         div.greeter NCRS
         div.greeter Florida
         div.greeter Chapter
-      div.page-slide-button
-        i(class="fa fa-angle-down" aria-hidden="true")
-        i(class="fa fa-angle-down" aria-hidden="true")
+      //- div.page-slide-button
+      //-   i(class="fa fa-angle-down" aria-hidden="true")
+      //-   i(class="fa fa-angle-down" aria-hidden="true")
 
 section.about-wrapper
     div.about-display
