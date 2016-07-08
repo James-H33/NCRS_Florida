@@ -96,3 +96,48 @@
 
   IndexSlide.init();
 })();
+
+(function () {
+
+  var Carousel = {
+    images: ['photo-one', 'photo-two', 'photo-three'],
+    //   images: [
+    //     'http://assets.blog.hemmings.com/wp-content/uploads//2013/04/DaytonaBeach1957_1500.jpg',
+    //     '/imgs/56daytona.jpg',
+    //     '/imgs/ncrs-back.jpg'
+    //  ],
+    init: function init() {
+      this.cacheDOM();
+      this.bindEvents();
+    },
+    cacheDOM: function cacheDOM() {
+      this.$body = $('body');
+      this.$window = $(window);
+      this.$indexWrapper = this.$body.find('.index-wrapper');
+    },
+    bindEvents: function bindEvents() {
+      this.$window.on('load', this.loopImages.bind(this));
+    },
+    slideImages: function slideImages(i) {
+      var _this2 = this;
+
+      setTimeout(function () {
+        _this2.$indexWrapper.attr('class', 'index-wrapper');
+        _this2.$indexWrapper.addClass(_this2.images[i]);
+
+        if (i === 2) {
+          setTimeout(function () {
+            _this2.loopImages();
+          }, 5000);
+        }
+      }, 5000 * i);
+    },
+    loopImages: function loopImages() {
+      for (var i = 0; i < 3; i++) {
+        this.slideImages(i);
+      }
+    }
+  };
+
+  Carousel.init();
+})();

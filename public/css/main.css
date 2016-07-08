@@ -246,10 +246,9 @@ body {
   width: 100%;
   height: 100vh;
   min-height: 450px;
-  background-image: url("http://assets.blog.hemmings.com/wp-content/uploads//2013/04/DaytonaBeach1957_1500.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 0%;
+  opacity: 0;
+  -webkit-transition: all 1200ms ease;
+  transition: all 1200ms ease;
   background-attachment: initial; }
 
 @media(min-width: 769px) {
@@ -481,6 +480,27 @@ body {
 
 .clear {
   clear: both; }
+
+.photo-one {
+  opacity: 1;
+  background-image: url("http://assets.blog.hemmings.com/wp-content/uploads//2013/04/DaytonaBeach1957_1500.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0%; }
+
+.photo-two {
+  opacity: 1;
+  background-image: url("/imgs/56daytona.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0%; }
+
+.photo-three {
+  opacity: 1;
+  background-image: url("/imgs/ncrs-back.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0%; }
 
 .membership-intro-wrapper {
   width: 100%;
