@@ -77,11 +77,8 @@
   text-shadow: 0 2px 5px $richer-text
   position: absolute
   bottom: 15vh
-  left: calc(50% - 25px)
+  left: 7%
   cursor: pointer
-  &:hover
-    i:nth-of-type(1)
-      top: 5px
 
   i
     color: $off-white
@@ -90,15 +87,24 @@
     position: absolute
     left: 8px
     &:nth-of-type(1)
-      top: -5px
+      font-size: 40px
+      top: 0px
+      left: 14px
     &:nth-of-type(2)
-      top: 10px
+      top: 8px
 
 @media(min-width: 820px)
   .page-slide-button
     left: 7%
+    &:hover
+      i:nth-of-type(1)
+        top: 16px
+      i:nth-of-type(2)
+        top: 14px
     i
       font-size: 70px
+      &:nth-of-type(1)
+        left: 18px
 
 
 
