@@ -1,45 +1,146 @@
 .about-intro-wrapper
   width: 100%
-  height: 100vh
+  height: 60vh
+  min-height: 400px
+  background:
+    image: url('https://images.unsplash.com/uploads/14134890947503c6effdc/72adf455?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=35104f19eccf4f9953f0eea9dc98c197')
+    size: cover
+    position: center
 
 .about-intro-display
   width: 100%
   height: 100%
-  max-width: 1400px
-  margin: 0 auto
-  padding-top: 100px
+  display: table
+  text-align: center
+
+  h2
+    color: $off-white
+    font-size: 60px
+    font-family: 'Abel'
+    letter-spacing: 1px
+    display: table-cell
+    vertical-align: middle
 
 @media(min-width: 820px)
 
   .about-intro-display
-    width: 90%
+    h2
+      font-size: 85px
 
 
 
-.about-intro-container
+.about-extended-wrapper
   width: 100%
   height: auto
-  padding-top: 400px
   position: relative
 
 @media(min-width: 820px)
 
-  .about-intro-container
+  .about-extended-wrapper
     width: 100%
     height: auto
-    padding-top: 200px
     position: relative
 
+.about-extended-display
+  width: 95%
+  height: 100%
+  max-width: 1400px
+  padding-top: 50px
+  margin: 0 auto
+
+@media(min-width: 820px)
+
+  .about-extended-display
+    width: 85%
+
+.about-left-col
+  height: 100%
+  display: none
+  vertical-align: top
+  padding-top: 35px
+
+  h3
+    color: $dark-text
+    font-size: 22px
+    font-family: 'Abel'
+    letter-spacing: 2px
+
+  ul
+    width: 80%
+    list-style: none
+    margin: 0 auto
+    padding-left: 25%
+    height: auto
+
+  li
+    color: $dark-text
+    width: auto
+    padding: 5px 0
+    letter-spacing: 1px
+    &:nth-of-type(1)
+      color: $gold
+      font-weight: bold
+
+@media(min-width: 820px)
+
+  .about-left-col
+    width: 35%
+    display: inline-block
 
 
-.about-intro-header
+
+.about-right-col
   width: 100%
   height: auto
   background: #fff
-  margin-right: 50%
+  padding: 50px 0
+  position: relative
+  text-align: center
+  &:after
+    content: ''
+    border-bottom: 1px solid $gold
+    padding-top: 25px
+    position: absolute
+    width: 80%
+    left: 10%
+
+  h2
+    width: 95%
+    color: $dark-text
+    font-size: 25px
+    font-family: 'Abel'
+    margin: 0 auto
+    letter-spacing: 1px
+
+  p
+    width: 95%
+    margin: 0 auto
+    padding: 20px 0
+    color: $light-text-color
+    font-size: 14px
+    letter-spacing: 0.4px
+    line-height: 35px
+
+@media(min-width: 820px)
+
+  .about-right-col
+    width: 55%
+    height: auto
+    background: #fff
+    float: right
+    margin-right: 10%
+    text-align: center
+
+
+
+
+
+.about-right-news
+  width: 100%
+  height: auto
+  background: #fff
   padding: 35px 0
   text-align: center
-  z-index: 5
 
   h2
     width: 95%
@@ -51,12 +152,13 @@
 
   h3
     width: 95%
-    max-width: 350px
+    max-width: 450px
     margin: 0 auto
     color: $light-text-color
     font-size: 16px
     font-style: italic
     font-weight: normal
+    line-height: 35px
     letter-spacing: 1px
     padding: 25px 0
     position: relative
@@ -82,70 +184,17 @@
 
 @media(min-width: 820px)
 
-  .about-intro-header
-    width: 50%
+  .about-right-news
+    width: 55%
     height: auto
     background: #fff
-    margin-right: 50%
-    padding: 35px 0
-    border: 1px solid $gold
+    float: right
+    margin-right: 10%
     text-align: center
-    z-index: 5
-
-    h2
-      width: 95%
-      color: $dark-text
-      font-size: 25px
-      font-family: 'Abel'
-      margin: 0 auto
-      letter-spacing: 1px
-
-    h3
-      width: 95%
-      max-width: 350px
-      margin: 0 auto
-      color: $light-text-color
-      font-size: 16px
-      font-style: italic
-      font-weight: normal
-      letter-spacing: 1px
-      padding: 25px 0
-      position: relative
-
-      &:after
-        content: ''
-        display: block
-        border-bottom: 3px solid $gold
-        width: 20px
-        padding-top: 15px
-        position: absolute
-        left: calc(50% - 10px)
 
 
-    p
-      width: 95%
-      margin: 0 auto
-      padding: 20px 0
-      color: $light-text-color
-      font-size: 14px
-      letter-spacing: 0.4px
-      line-height: 35px
 
 
-.about-banner-images
-  width: 95%
-  height: 400px
-  max-width: 1080px
-  background:
-    image: url('/imgs/56daytona.jpg')
-    size: cover
-    position: center
-  margin: 0 auto
-  position: absolute
-  top: 0
-  right: 0
-  left: 0
-  z-index: -1
 
-  img
-    width: 100%
+
+/////////// Extended Section ////////////

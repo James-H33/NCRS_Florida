@@ -117,7 +117,6 @@
       var _this2 = this;
 
       setTimeout(function () {
-        console.log(_this2.$carousel[i].classList);
         _this2.$carousel[i].classList.add('active-slide');
 
         if (i === 2) {
@@ -137,16 +136,3 @@
 
   Carousel.init();
 })();
-
-// Slide Image by Class
-// setTimeout(() => {
-//   this.$indexWrapper.removeClass();
-//   this.$indexWrapper.addClass(this.images[i]);
-//
-//       if (i === 2) {
-//         setTimeout(() => {
-//           this.loopImages();
-//         }, 5000)
-//       }
-//
-// }, 5000 * i);
