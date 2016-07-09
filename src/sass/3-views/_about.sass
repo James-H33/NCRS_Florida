@@ -6,6 +6,7 @@
     image: url('https://images.unsplash.com/uploads/14134890947503c6effdc/72adf455?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=35104f19eccf4f9953f0eea9dc98c197')
     size: cover
     position: center
+  z-index: 8
 
 .about-intro-display
   width: 100%
@@ -45,23 +46,27 @@
   width: 95%
   height: 100%
   max-width: 1400px
-  padding-top: 50px
+  padding-top: 30px
   margin: 0 auto
 
 @media(min-width: 820px)
 
   .about-extended-display
     width: 85%
+    padding-top: 50px
 
 .about-left-col
   height: 100%
   display: none
   vertical-align: top
   padding-top: 35px
+  position: fixed
+  top: 35%
+
 
   h3
     color: $dark-text
-    font-size: 22px
+    font-size: 28px
     font-family: 'Abel'
     letter-spacing: 2px
 
@@ -77,7 +82,7 @@
     width: auto
     padding: 5px 0
     letter-spacing: 1px
-    &:nth-of-type(1)
+    &.active-li
       color: $gold
       font-weight: bold
 
@@ -86,6 +91,8 @@
   .about-left-col
     width: 35%
     display: inline-block
+    z-index: -1
+
 
 
 
@@ -107,7 +114,7 @@
   h2
     width: 95%
     color: $dark-text
-    font-size: 25px
+    font-size: 28px
     font-family: 'Abel'
     margin: 0 auto
     letter-spacing: 1px
@@ -135,6 +142,63 @@
 
 
 
+.about-right-restorer
+  width: 100%
+  height: auto
+  background: #fff
+  padding: 35px 0
+  text-align: center
+
+  h2
+    width: 95%
+    color: $dark-text
+    font-size: 28px
+    font-family: 'Abel'
+    margin: 0 auto
+    letter-spacing: 1px
+
+  h3
+    width: 95%
+    max-width: 450px
+    margin: 0 auto
+    color: $light-text-color
+    font-size: 16px
+    font-style: italic
+    font-weight: normal
+    line-height: 35px
+    letter-spacing: 1px
+    padding: 25px 0
+    position: relative
+
+    &:after
+      content: ''
+      display: block
+      border-bottom: 3px solid $gold
+      width: 20px
+      padding-top: 15px
+      position: absolute
+      left: calc(50% - 10px)
+
+
+  p
+    width: 95%
+    margin: 0 auto
+    padding: 20px 0
+    color: $light-text-color
+    font-size: 14px
+    letter-spacing: 0.4px
+    line-height: 35px
+
+@media(min-width: 820px)
+
+  .about-right-restorer
+    width: 55%
+    height: auto
+    background: #fff
+    float: right
+    margin-right: 10%
+    text-align: center
+
 .about-right-news
   width: 100%
   height: auto
@@ -145,7 +209,7 @@
   h2
     width: 95%
     color: $dark-text
-    font-size: 25px
+    font-size: 28px
     font-family: 'Abel'
     margin: 0 auto
     letter-spacing: 1px

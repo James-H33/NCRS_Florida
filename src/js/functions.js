@@ -1,6 +1,8 @@
 //******************************************************
 //                 JavaScript
 //******************************************************
+const article = document.getElementById('article');
+const title = article.dataset.title;
 
 
 (function() {
@@ -33,6 +35,7 @@
   Menu.init();
 
 })();
+
 
 
 (function() {
@@ -68,6 +71,7 @@
 })();
 
 
+
 (function() {
 
   const IndexSlide = {
@@ -98,6 +102,8 @@
   // IndexSlide.init();
 
 })();
+
+
 
 (function() {
 
@@ -135,6 +141,81 @@
     }
   }
 
-  Carousel.init();
+  if (title === 'index') {
+    Carousel.init();
+  }
+
+})();
+
+
+(function() {
+
+  const AboutMenu = {
+    init: function() {
+      this.cacheDOM();
+      this.bindEvents();
+    },
+    cacheDOM: function() {
+      this.$body         = $('body');
+      this.$window       = $(window);
+      this.$aboutLeft    = this.$body.find('.about-left-col');
+      this.$aboutLeftLi  = this.$aboutLeft.find('li');
+      this.$aboutRightRest = this.$body.find('.about-right-restorer');
+      this.$aboutRightNews = this.$body.find('.about-right-news');
+    },
+    bindEvents: function() {
+      this.$window.on('scroll', this.listen.bind(this));
+    },
+    activeMenu: function(i) {
+      this.$aboutLeftLi.removeClass();
+      if (i === 0) {
+        this.$aboutLeftLi[0].classList.add('active-li');
+      }
+      if (i === 1) {
+        this.$aboutLeftLi[1].classList.add('active-li');
+      }
+      if (i === 2) {
+        this.$aboutLeftLi[2].classList.add('active-li');
+      }
+    },
+    inactiveMenu: function() {
+      this.$aboutLeft.removeClass('active-about');
+    },
+    listen: function() {
+      this.$x = this.$body.scrollTop();
+      this.$aboutTop = Math.floor(this.$aboutLeft.offset().top);
+
+
+      if (this.$aboutTop < this.$aboutRightRest.offset().top) {
+        this.activeMenu(0);
+      }
+
+      if (this.$aboutTop > this.$aboutRightRest.offset().top - 100) {
+        this.activeMenu(1);
+      }
+
+      if (this.$aboutTop > this.$aboutRightNews.offset().top - 100) {
+        this.activeMenu(2);
+      }
+
+    }
+  }
+
+  if (title === 'about') {
+    AboutMenu.init();
+  }
+
+})();
+
+
+(function() {
+
+  AnimateAboutMenu = {
+    init: function() {
+
+    }, cacheDOM: function() {
+
+    }
+  }
 
 })();
