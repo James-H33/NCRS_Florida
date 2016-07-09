@@ -753,7 +753,10 @@ body {
     color: #535454;
     width: auto;
     padding: 5px 0;
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    cursor: pointer; }
+    .about-left-col li:hover {
+      font-weight: bold; }
     .about-left-col li.active-li {
       color: #d2a26c;
       font-weight: bold; }
@@ -762,7 +765,9 @@ body {
   .about-left-col {
     width: 35%;
     display: inline-block;
-    z-index: -1; } }
+    z-index: -1; }
+    .about-left-col.active-left {
+      z-index: initial; } }
 .about-right-col {
   width: 100%;
   height: auto;

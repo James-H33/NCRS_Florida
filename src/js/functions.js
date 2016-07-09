@@ -156,48 +156,69 @@ const title = article.dataset.title;
       this.bindEvents();
     },
     cacheDOM: function() {
-      this.$body         = $('body');
-      this.$window       = $(window);
-      this.$aboutLeft    = this.$body.find('.about-left-col');
-      this.$aboutLeftLi  = this.$aboutLeft.find('li');
-      this.$aboutRightRest = this.$body.find('.about-right-restorer');
-      this.$aboutRightNews = this.$body.find('.about-right-news');
+      this.$body               = $('body');
+      this.$window             = $(window);
+      this.$aboutLeft          = this.$body.find('.about-left-col');
+      this.$aboutRight         = this.$body.find('.about-right-col');
+      this.$aboutLeftLi        = this.$aboutLeft.find('li');
+      this.$aboutRest          = this.$body.find('.about-right-restorer');
+      this.$aboutNews          = this.$body.find('.about-right-news');
+      this.$aboutIntroWrapper  = this.$body.find('.about-intro-wrapper')
+      this.$windowHeight       = this.$window.innerHeight();
     },
     bindEvents: function() {
       this.$window.on('scroll', this.listen.bind(this));
+      this.$aboutLeftLi.on('click', event, this.animateMenu.bind(this));
     },
     activeMenu: function(i) {
       this.$aboutLeftLi.removeClass();
-      if (i === 0) {
-        this.$aboutLeftLi[0].classList.add('active-li');
-      }
-      if (i === 1) {
-        this.$aboutLeftLi[1].classList.add('active-li');
-      }
-      if (i === 2) {
-        this.$aboutLeftLi[2].classList.add('active-li');
-      }
-    },
-    inactiveMenu: function() {
-      this.$aboutLeft.removeClass('active-about');
+        if (i === 0) {
+          this.$aboutLeftLi[0].classList.add('active-li');
+        }
+        if (i === 1) {
+          this.$aboutLeftLi[1].classList.add('active-li');
+        }
+        if (i === 2) {
+          this.$aboutLeftLi[2].classList.add('active-li');
+        }
     },
     listen: function() {
       this.$x = this.$body.scrollTop();
       this.$aboutTop = Math.floor(this.$aboutLeft.offset().top);
 
+        if (this.$aboutTop <= this.$aboutRest.offset().top) {
+          this.activeMenu(0);
+        } else if (this.$aboutTop >= this.$aboutRest.offset().top - (this.$windowHeight * .30)) {
+          this.activeMenu(1);
+        }
+        if (this.$aboutTop >= this.$aboutNews.offset().top - (this.$windowHeight * .35)) {
+          this.activeMenu(2);
+        }
 
-      if (this.$aboutTop < this.$aboutRightRest.offset().top) {
-        this.activeMenu(0);
-      }
+        if (this.$aboutTop > this.$aboutIntroWrapper.innerHeight()) {
+          this.$aboutLeft.addClass('active-left');
+        } else {
+          this.$aboutLeft.removeClass('active-left');
+        }
 
-      if (this.$aboutTop > this.$aboutRightRest.offset().top - 100) {
-        this.activeMenu(1);
-      }
+    },
+    animateMenu: function(e) {
+      let $self = $(e.target);
 
-      if (this.$aboutTop > this.$aboutRightNews.offset().top - 100) {
-        this.activeMenu(2);
-      }
-
+        if ($self.text() === 'NCRS') {
+          $('html, body').animate({
+            scrollTop: this.$aboutRight.offset().top - (this.$windowHeight * .32)
+          }, 1200);
+        } else if ($self.text() === 'MAGAZINE') {
+          $('html, body').animate({
+            scrollTop: this.$aboutRest.offset().top - (this.$windowHeight * .30)
+          }, 1200);
+        }
+        if ($self.text() === 'NEWS LETTER') {
+          $('html, body').animate({
+            scrollTop: this.$aboutNews.offset().top - (this.$windowHeight * .30)
+          }, 1200);
+        }
     }
   }
 
@@ -208,14 +229,22 @@ const title = article.dataset.title;
 })();
 
 
-(function() {
-
-  AnimateAboutMenu = {
-    init: function() {
-
-    }, cacheDOM: function() {
-
-    }
-  }
-
-})();
+// (function() {
+//
+//   AnimateAboutMenu = {
+//     init: function() {
+//       this.cacheDOM();
+//       this.bindEvents();
+//     },
+//     cacheDOM: function() {
+//
+//     },
+//     bindEvents: function() {
+//
+//     },
+//
+//   }
+//
+//   AnimateAboutMenu.init();
+//
+// })();
