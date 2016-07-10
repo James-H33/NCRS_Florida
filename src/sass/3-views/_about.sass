@@ -94,9 +94,12 @@
   .about-left-col
     width: 35%
     display: inline-block
+    transition: $mid-trans
+    opacity: 0
     z-index: -1
     &.active-left
       z-index: initial
+      opacity: 1
 
 
 
@@ -254,6 +257,120 @@
 @media(min-width: 820px)
 
   .about-right-news
+    width: 55%
+    height: auto
+    background: #fff
+    float: right
+    margin-right: 10%
+    text-align: center
+
+.about-right-judge
+  width: 100%
+  height: auto
+  background: #fff
+  padding: 35px 0
+  text-align: center
+
+  h2
+    width: 95%
+    color: $dark-text
+    font-size: 28px
+    font-family: 'Abel'
+    margin: 0 auto
+    letter-spacing: 1px
+
+  h3
+    width: 95%
+    max-width: 450px
+    margin: 0 auto
+    color: $light-text-color
+    font-size: 16px
+    font-style: italic
+    font-weight: normal
+    line-height: 35px
+    letter-spacing: 1px
+    padding: 25px 0
+    position: relative
+
+    &:after
+      content: ''
+      display: block
+      border-bottom: 3px solid $gold
+      width: 20px
+      padding-top: 15px
+      position: absolute
+      left: calc(50% - 10px)
+
+
+  p
+    width: 95%
+    margin: 0 auto
+    padding: 20px 0
+    color: $light-text-color
+    font-size: 14px
+    letter-spacing: 0.4px
+    line-height: 35px
+
+@media(min-width: 820px)
+
+  .about-right-judge
+    width: 55%
+    height: auto
+    background: #fff
+    float: right
+    margin-right: 10%
+    text-align: center
+
+.about-right-events
+  width: 100%
+  height: auto
+  background: #fff
+  padding: 35px 0
+  text-align: center
+
+  h2
+    width: 95%
+    color: $dark-text
+    font-size: 28px
+    font-family: 'Abel'
+    margin: 0 auto
+    letter-spacing: 1px
+
+  h3
+    width: 95%
+    max-width: 450px
+    margin: 0 auto
+    color: $light-text-color
+    font-size: 16px
+    font-style: italic
+    font-weight: normal
+    line-height: 35px
+    letter-spacing: 1px
+    padding: 25px 0
+    position: relative
+
+    &:after
+      content: ''
+      display: block
+      border-bottom: 3px solid $gold
+      width: 20px
+      padding-top: 15px
+      position: absolute
+      left: calc(50% - 10px)
+
+
+  p
+    width: 95%
+    margin: 0 auto
+    padding: 20px 0
+    color: $light-text-color
+    font-size: 14px
+    letter-spacing: 0.4px
+    line-height: 35px
+
+@media(min-width: 820px)
+
+  .about-right-events
     width: 55%
     height: auto
     background: #fff
