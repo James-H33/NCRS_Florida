@@ -1,9 +1,11 @@
-'use strict';
-
 //******************************************************
 //                 JavaScript
 //******************************************************
+
+"use strict";
+
 var article = document.getElementById('article');
+
 var title = article.dataset.title;
 
 (function () {

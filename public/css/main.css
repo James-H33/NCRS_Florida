@@ -704,6 +704,7 @@ body {
     font-size: 60px;
     font-family: "Abel";
     letter-spacing: 1px;
+    text-shadow: 0 2px 5px #262626;
     display: table-cell;
     vertical-align: middle; }
 

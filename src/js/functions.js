@@ -1,7 +1,11 @@
 //******************************************************
 //                 JavaScript
 //******************************************************
+
+"use strict";
+
 const article = document.getElementById('article');
+
 const title = article.dataset.title;
 
 
