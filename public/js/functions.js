@@ -165,7 +165,7 @@ var title = article.dataset.title;
     },
     bindEvents: function bindEvents() {
       this.$window.on('scroll', this.listen.bind(this));
-      this.$aboutLeftLi.on('click', event, this.animateMenu.bind(this));
+      this.$aboutLeftLi.on('click', this.animateMenu.bind(this));
     },
     activeMenu: function activeMenu(i) {
       this.$aboutLeftLi.removeClass();
@@ -212,8 +212,8 @@ var title = article.dataset.title;
         this.$aboutLeft.removeClass('active-left');
       }
     },
-    animateMenu: function animateMenu(e) {
-      var $self = $(e.target);
+    animateMenu: function animateMenu(event) {
+      var $self = $(event.target);
 
       if ($self.text() === 'NCRS') {
         $('html, body').animate({
