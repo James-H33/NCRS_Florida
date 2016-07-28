@@ -5,7 +5,6 @@
 "use strict";
 
 const article = document.getElementById('article');
-
 const title = article.dataset.title;
 
 
@@ -254,6 +253,44 @@ const title = article.dataset.title;
 
   if (title === 'about') {
     AboutMenu.init();
+  }
+
+})();
+
+
+(function() {
+
+  const Membership = {
+    init: function() {
+      this.cacheDOM();
+      this.bindEvents();
+    }, 
+    cacheDOM: function() {
+      this.$body              = $('body');
+      this.$window            = $(window);
+      this.$memSlideContainer = $('.membership-slide-container');
+      this.$nationalMem       = $('#national-member');
+    }, 
+    bindEvents: function() {
+      this.$window.on('load', this.pageLoad.bind(this));
+      this.$window.on('scroll', this.addClasses.bind(this));
+    }, 
+    pageLoad: function() {
+      this.$memSlideContainer[0].classList.add('active-member-slide');
+    }, 
+    addClasses: function() {
+      var scrollHTML = $('html').scrollTop();
+      var scrollBody = $('body').scrollTop();
+      var w_height = this.$window.innerHeight();
+      
+      if (scrollHTML > this.$nationalMem.offset().top - (w_height / 2) || scrollBody > this.$nationalMem.offset().top - (w_height / 2)) {
+         this.$memSlideContainer[1].classList.add('active-member-slide');
+      }
+    }
+  }
+
+  if (title === 'membership') {
+    Membership.init();
   }
 
 })();
