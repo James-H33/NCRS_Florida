@@ -73,41 +73,6 @@ const title = article.dataset.title;
 
 })();
 
-
-
-(function() {
-
-  const IndexSlide = {
-    init: function() {
-      this.cacheDOM();
-      this.bindEvents();
-    },
-    cacheDOM: function() {
-      this.$body         = $('body');
-      this.$window       = $(window);
-      this.$pageSlideBtn = this.$body.find('.page-slide-button');
-      this.$aboutWrapper = this.$body.find('.about-wrapper');
-    },
-    bindEvents: function() {
-      this.$pageSlideBtn.on('click', this.slidePage.bind(this));
-      this.$window.on('scroll', this.listener.bind(this));
-    },
-    slidePage: function() {
-        $('html, body').animate({
-          scrollTop: this.$aboutWrapper.offset().top
-        }, 1200);
-    },
-    listener: function() {
-      this.$x = this.$body.scrollTop();
-    }
-  }
-
-  // IndexSlide.init();
-
-})();
-
-
-
 (function() {
 
   const Carousel = {
@@ -264,25 +229,25 @@ const title = article.dataset.title;
     init: function() {
       this.cacheDOM();
       this.bindEvents();
-    }, 
+    },
     cacheDOM: function() {
       this.$body              = $('body');
       this.$window            = $(window);
       this.$memSlideContainer = $('.membership-slide-container');
       this.$nationalMem       = $('#national-member');
-    }, 
+    },
     bindEvents: function() {
       this.$window.on('load', this.pageLoad.bind(this));
       this.$window.on('scroll', this.addClasses.bind(this));
-    }, 
+    },
     pageLoad: function() {
       this.$memSlideContainer[0].classList.add('active-member-slide');
-    }, 
+    },
     addClasses: function() {
       var scrollHTML = $('html').scrollTop();
       var scrollBody = $('body').scrollTop();
       var w_height = this.$window.innerHeight();
-      
+
       if (scrollHTML > this.$nationalMem.offset().top - (w_height / 2) || scrollBody > this.$nationalMem.offset().top - (w_height / 2)) {
          this.$memSlideContainer[1].classList.add('active-member-slide');
       }

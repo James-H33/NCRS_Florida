@@ -34,7 +34,21 @@
   width: 90%
   margin: 0 auto
   overflow: hidden
+  position: relative
   padding: 40px 0
+  transform: rotate(0deg)
+
+.greeter-image
+  width: 100%
+  height: 100%
+  position: absolute
+  background:
+    image: url('/imgs/florida-outline.png')
+    repeat: no-repeat
+    size: contain
+  transform: rotate(-2deg)
+
+
 
 .greeter
   color: $off-white
@@ -119,8 +133,38 @@
 @media(min-width: 769px)
 
   .about-display
-    padding: 60px 0
+    padding: 20px 0 60px 0
     text-align: left
+
+
+
+.gallery-text
+  width: 90%
+  height: auto
+  margin: 0 auto
+  padding: 50px 0 50px 0
+  text-align: center
+  position: relative
+
+  i
+    color: #fbfbfb
+    font-size: 100px
+    padding: 10px 0
+    position: absolute
+    z-index: -1
+    &:nth-of-type(1)
+    left: 0
+    top: 0
+
+  h3
+    color: $light-text-color
+    font-size: 17px
+    font-weight: normal
+    letter-spacing: .4px
+    line-height: 40px
+    z-index: 10
+
+
 
 .about-ncrs-wrapper
   width: 100%
@@ -128,9 +172,10 @@
 @media(min-width: 769px)
 
   .about-ncrs-wrapper
-    width: 60%
+    width: 32%
     display: inline-block
-    margin-right: 8%
+    margin-right: 0
+    text-align: center
 
 
 .about-title
@@ -183,7 +228,7 @@
   .about-title
     h2
       color: $dark-text
-      font-size: 28px
+      font-size: 24px
 
   .about-info
     p
@@ -197,12 +242,13 @@
   width: 100%
   height: 100%
   padding: 30px 0
+  text-align: center
 
 
 @media(min-width: 769px)
 
   .about-facebook-wrapper
-    width: 30%
+    width: 32%
     height: 100%
     display: inline-block
     vertical-align: top
@@ -216,14 +262,16 @@
 
   h2
     color: $dark-text
-    font-size: 28px
+    font-size: 24px
     font-family: 'Abel'
 
   p
+    width: 80%
     color: $light-text-color
     font-size: 14px
     line-height: 25px
     padding: 20px 0 0 0
+    margin: 0 auto
 
 
 .facebook-link
@@ -254,6 +302,34 @@
       padding: 10px 18px
       letter-spacing: 1px
 
+.ncrsfl-link
+  width: 95%
+  height: auto
+  margin: 0 auto
+  padding: 30px 0 0 0
+
+  button
+    width: 200px
+    height: 40px
+    background: transparent
+    border: 2px solid $gold
+    transform: translateY(0)
+    transition: $mid-trans
+
+    &:hover
+      background: $gold
+      transform: translateY(-3px)
+      a
+        color: #fff
+
+    a
+      color: $gold
+      font-size: 12px
+      font-weight: bold
+      text-decoration: none
+      padding: 10px 18px
+      letter-spacing: 1px
+
 
 ////////////////////// Section Events //////////////////////////////
 
@@ -261,7 +337,7 @@
   width: 100%
   height: 50vh
   background:
-    image: url('http://ineptechs.com/wp-content/uploads/2014/10/carshow-4.jpg')
+    image: url('/imgs/index-page.jpg')
     size: cover
     position: center
 
