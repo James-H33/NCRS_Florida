@@ -559,38 +559,6 @@ body {
   opacity: 0;
   z-index: -2; }
 
-.index-carousel-two {
-  width: 100%;
-  height: 100vh;
-  min-height: 450px;
-  opacity: 0;
-  position: absolute;
-  -webkit-transition: all 1200ms ease-in-out;
-  transition: all 1200ms ease-in-out;
-  background-attachment: initial;
-  opacity: 0;
-  z-index: -2;
-  background-image: url("/imgs/56daytona.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 0%; }
-
-.index-carousel-three {
-  width: 100%;
-  height: 100vh;
-  min-height: 450px;
-  opacity: 0;
-  position: absolute;
-  -webkit-transition: all 1200ms ease-in-out;
-  transition: all 1200ms ease-in-out;
-  background-attachment: initial;
-  opacity: 0;
-  z-index: -2;
-  background-image: url("/imgs/ncrs-back.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: 50% 0%; }
-
 .active-slide {
   opacity: 1; }
 

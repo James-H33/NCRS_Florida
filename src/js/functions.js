@@ -93,7 +93,7 @@ const title = article.dataset.title;
       setTimeout(() => {
         this.$carousel[i].classList.add('active-slide');
 
-            if (i === 8) {
+            if (i === 11) {
               setTimeout(() => {
                 this.loopImages();
               }, 5000)

@@ -92,7 +92,7 @@ var title = article.dataset.title;
       setTimeout(function () {
         _this2.$carousel[i].classList.add('active-slide');
 
-        if (i === 8) {
+        if (i === 11) {
           setTimeout(function () {
             _this2.loopImages();
           }, 5000);
