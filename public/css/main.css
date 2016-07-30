@@ -749,8 +749,13 @@ body {
       .contacts-intro-display li h3:nth-of-type(1) {
         font-weight: bold;
         font-size: 18px; }
-      .contacts-intro-display li h3:nth-of-type(3) {
-        color: #d2a26c; }
+    .contacts-intro-display li a {
+      color: #d2a26c;
+      text-decoration: none;
+      -webkit-transition: all 350ms ease-in-out;
+      transition: all 350ms ease-in-out; }
+      .contacts-intro-display li a:hover {
+        color: #755b3d; }
   .contacts-intro-display figure {
     width: 50%;
     margin: 0 auto; }

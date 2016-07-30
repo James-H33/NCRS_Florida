@@ -102,7 +102,7 @@ const title = article.dataset.title;
       }, 5000 * i);
     },
     loopImages: function() {
-      for (var i = 0; i < 9; i++) {
+      for (var i = 0; i < 12; i++) {
         this.slideImages(i);
       }
       this.$carousel.removeClass('active-slide');
