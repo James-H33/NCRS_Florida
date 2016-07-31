@@ -218,7 +218,7 @@ var title = article.dataset.title;
 
 (function () {
 
-  var Membership = {
+  var Future = {
     init: function init() {
       this.cacheDOM();
       this.bindEvents();
@@ -226,28 +226,28 @@ var title = article.dataset.title;
     cacheDOM: function cacheDOM() {
       this.$body = $('body');
       this.$window = $(window);
-      this.$memSlideContainer = $('.membership-slide-container');
-      this.$nationalMem = $('#national-member');
+      this.$futureSlideContainer = $('.future-slide-container');
     },
     bindEvents: function bindEvents() {
       this.$window.on('load', this.pageLoad.bind(this));
       this.$window.on('scroll', this.addClasses.bind(this));
     },
     pageLoad: function pageLoad() {
-      this.$memSlideContainer[0].classList.add('active-member-slide');
+      this.$futureSlideContainer[0].classList.add('active-future-slide');
     },
     addClasses: function addClasses() {
       var scrollHTML = $('html').scrollTop();
       var scrollBody = $('body').scrollTop();
       var w_height = this.$window.innerHeight();
 
-      if (scrollHTML > this.$nationalMem.offset().top - w_height / 2 || scrollBody > this.$nationalMem.offset().top - w_height / 2) {
-        this.$memSlideContainer[1].classList.add('active-member-slide');
-      }
+      // Add a ID to the next event section in order to fire off event correctly
+      //   if (scrollHTML > this.$nationalMem.offset().top - (w_height / 2) || scrollBody > this.$nationalMem.offset().top - (w_height / 2)) {
+      //      this.$memSlideContainer[1].classList.add('active-member-slide');
+      //   }
     }
   };
 
-  if (title === 'membership') {
-    Membership.init();
+  if (title === 'future') {
+    Future.init();
   }
 })();

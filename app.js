@@ -2,9 +2,10 @@ const express = require('express');
 const app     = express();
 
 // Require App Routes
-const MembershipRoute = require('./routes/membership');
-const ContactsRoute = require('./routes/contacts');
-const AboutRoute = require('./routes/about');
+const MembershipRoute   = require('./routes/membership');
+const ContactsRoute     = require('./routes/contacts');
+const AboutRoute        = require('./routes/about');
+const FutureRoute       = require('./routes/future-events');
 
 // Ports
 const port = process.env.PORT || 5000;
@@ -22,6 +23,7 @@ app.get('/', function(req, res) {
 app.use('/', MembershipRoute);
 app.use('/', ContactsRoute);
 app.use('/', AboutRoute);
+app.use('/', FutureRoute);
 
 
 app.listen(port, portIP, function() {

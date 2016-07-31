@@ -256,7 +256,7 @@ body {
 .index-overlay {
   width: 100%;
   height: calc(100% - 100px);
-  background: rgba(30, 30, 30, 0.5);
+  background: rgba(30, 30, 30, 0.3);
   padding-top: 100px; }
 
 .index-display {
@@ -425,28 +425,29 @@ body {
     letter-spacing: 0.4px;
     line-height: 30px; }
 
-.about-join-button button {
-  width: 120px;
-  height: 40px;
-  background: transparent;
-  border: 2px solid #d2a26c;
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-  -webkit-transition: all 450ms ease-in-out;
-  transition: all 450ms ease-in-out; }
-  .about-join-button button:hover {
-    background: #d2a26c;
-    -webkit-transform: translateY(-3px);
-    transform: translateY(-3px); }
-    .about-join-button button:hover a {
-      color: #fff; }
-  .about-join-button button a {
+.about-join-button {
+  width: auto;
+  height: 50px; }
+  .about-join-button a {
+    width: auto;
+    height: 40px;
     color: #d2a26c;
     font-size: 12px;
     font-weight: bold;
     text-decoration: none;
-    padding: 10px 18px;
-    letter-spacing: 1px; }
+    letter-spacing: 1px;
+    background: transparent;
+    padding: 10px;
+    border: 2px solid #d2a26c;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: all 450ms ease-in-out;
+    transition: all 450ms ease-in-out; }
+    .about-join-button a:hover {
+      color: #fff;
+      background: #d2a26c;
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px); }
 
 @media(min-width: 769px) {
   .about-title h2 {
@@ -454,10 +455,7 @@ body {
     font-size: 24px; }
 
   .about-info p {
-    font-size: 14px; }
-
-  .about-join-button {
-    padding-left: 18px; } }
+    font-size: 14px; } }
 .about-facebook-wrapper {
   width: 100%;
   height: 100%;
@@ -484,8 +482,9 @@ body {
     width: 80%;
     color: rgba(40, 26, 23, 0.6);
     font-size: 14px;
-    line-height: 25px;
+    line-height: 30px;
     padding: 20px 0 0 0;
+    letter-spacing: 0.4px;
     margin: 0 auto; }
 
 .facebook-link {
@@ -493,56 +492,52 @@ body {
   height: auto;
   margin: 0 auto;
   padding: 30px 0 0 0; }
-  .facebook-link button {
-    width: 120px;
+  .facebook-link a {
+    width: auto;
     height: 40px;
+    color: #d2a26c;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
     background: transparent;
+    padding: 10px;
     border: 2px solid #d2a26c;
     -webkit-transform: translateY(0);
     transform: translateY(0);
     -webkit-transition: all 450ms ease-in-out;
     transition: all 450ms ease-in-out; }
-    .facebook-link button:hover {
+    .facebook-link a:hover {
+      color: #fff;
       background: #d2a26c;
       -webkit-transform: translateY(-3px);
       transform: translateY(-3px); }
-      .facebook-link button:hover a {
-        color: #fff; }
-    .facebook-link button a {
-      color: #d2a26c;
-      font-size: 12px;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 10px 18px;
-      letter-spacing: 1px; }
 
 .ncrsfl-link {
   width: 95%;
   height: auto;
   margin: 0 auto;
   padding: 30px 0 0 0; }
-  .ncrsfl-link button {
-    width: 200px;
+  .ncrsfl-link a {
+    width: auto;
     height: 40px;
+    color: #d2a26c;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
     background: transparent;
+    padding: 10px;
     border: 2px solid #d2a26c;
     -webkit-transform: translateY(0);
     transform: translateY(0);
     -webkit-transition: all 450ms ease-in-out;
     transition: all 450ms ease-in-out; }
-    .ncrsfl-link button:hover {
+    .ncrsfl-link a:hover {
+      color: #fff;
       background: #d2a26c;
       -webkit-transform: translateY(-3px);
       transform: translateY(-3px); }
-      .ncrsfl-link button:hover a {
-        color: #fff; }
-    .ncrsfl-link button a {
-      color: #d2a26c;
-      font-size: 12px;
-      font-weight: bold;
-      text-decoration: none;
-      padding: 10px 18px;
-      letter-spacing: 1px; }
 
 .events-wrapper {
   width: 100%;
@@ -757,28 +752,34 @@ body {
   width: 100%;
   height: 60vh;
   min-height: 400px;
-  background-image: url("/imgs/about_back.png");
-  background-size: cover;
-  background-position: center;
+  padding-top: 62px;
+  background-image: url("/imgs/about-image.jpg");
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
   z-index: 8; }
 
 .about-intro-display {
   width: 100%;
   height: 100%;
-  display: table;
-  text-align: center; }
+  text-align: center;
+  position: relative; }
   .about-intro-display h2 {
     color: #e6e7e7;
     font-size: 60px;
     font-family: "Abel";
     letter-spacing: 1px;
+    font-weight: normal;
     text-shadow: 0 2px 5px #262626;
-    display: table-cell;
-    vertical-align: middle; }
+    position: absolute;
+    bottom: 80px;
+    left: 70px; }
 
 @media(min-width: 820px) {
   .about-intro-display h2 {
-    font-size: 85px; } }
+    font-size: 70px;
+    position: absolute;
+    bottom: 80px;
+    left: 70px; } }
 .about-extended-wrapper {
   width: 100%;
   height: auto;
@@ -1079,3 +1080,142 @@ body {
     float: right;
     margin-right: 10%;
     text-align: center; } }
+.future-intro-wrapper {
+  width: 100%;
+  height: auto; }
+
+.future-intro-display {
+  width: 100%;
+  height: 100%;
+  padding-top: 60px; }
+
+.future-wrapper {
+  width: 100%;
+  height: auto;
+  min-height: 500px;
+  padding: 40px 0 0 0; }
+
+@media(min-width: 769px) {
+  .future-wrapper {
+    padding: 80px 0 0 0; } }
+.future-header {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  vertical-align: top;
+  text-align: center;
+  padding: 0 0 30px 0;
+  overflow: hidden; }
+  .future-header h2 {
+    color: #535454;
+    font-size: 25px;
+    font-family: "Abel";
+    padding: 5px 0;
+    letter-spacing: 2px; }
+  .future-header img {
+    width: 70%;
+    padding: 30px 0; }
+
+@media(min-width: 769px) {
+  .future-header {
+    width: 49%;
+    vertical-align: top;
+    display: inline-block; }
+    .future-header h2:nth-of-type(2) {
+      font-size: 35px; }
+    .future-header img {
+      width: 50%;
+      padding: 30px 0; } }
+.future-slide-container {
+  width: 100%;
+  height: 100%;
+  -webkit-transform: translateX(50%);
+  transform: translateX(50%);
+  opacity: 0;
+  -webkit-transition: all 1000ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 1000ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .future-slide-container.active-future-slide {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1; }
+
+.future-info {
+  width: 90%;
+  display: block;
+  margin: 0 auto;
+  padding: 0; }
+  .future-info a {
+    width: auto;
+    height: 40px;
+    color: #d2a26c;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    letter-spacing: 1px;
+    background: transparent;
+    border: 2px solid #d2a26c;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: all 450ms ease-in-out;
+    transition: all 450ms ease-in-out; }
+    .future-info a:hover {
+      color: #fff;
+      background: #d2a26c;
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px); }
+  .future-info h2 {
+    color: #535454;
+    font-family: "Abel";
+    padding: 5px 0;
+    letter-spacing: 2px; }
+  .future-info ul {
+    padding: 15px 0;
+    padding-left: 20px; }
+  .future-info li {
+    padding: 5px 0 5px 10px; }
+  .future-info p {
+    color: rgba(40, 26, 23, 0.6);
+    font-size: 14px;
+    line-height: 30px; }
+
+@media(min-width: 769px) {
+  .future-info {
+    width: 45%;
+    display: inline-block;
+    border-left: 1px solid #d2a26c;
+    padding-left: 30px; } }
+.future-button {
+  padding: 30px 0;
+  text-align: center; }
+  .future-button a {
+    width: auto;
+    height: 40px;
+    color: #d2a26c;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+    letter-spacing: 1px;
+    background: transparent;
+    border: 2px solid #d2a26c;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: all 450ms ease-in-out;
+    transition: all 450ms ease-in-out; }
+    .future-button a:nth-of-type(2) {
+      margin-left: 10px; }
+    .future-button a:hover {
+      color: #fff;
+      background: #d2a26c;
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px); }
+
+@media(min-width: 769px) {
+  .future-button {
+    text-align: left; } }
+.border {
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px 0;
+  border-bottom: 1px solid #d2a26c; }
