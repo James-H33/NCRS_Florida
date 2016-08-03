@@ -1,13 +1,22 @@
 .about-intro-wrapper
   width: 100%
-  height: 60vh
+  height: 40vh
+  max-width: 1400px
   min-height: 400px
   padding-top: 62px
+  margin: 0 auto
   background:
     image: url('/imgs/about-image.jpg')
     position: 50% 50%
     repeat: no-repeat
+    size: cover
   z-index: 8
+
+@media(min-width: 820px)
+
+  .about-intro-wrapper
+    height: 60vh
+
 
 .about-intro-display
   width: 100%
@@ -18,14 +27,14 @@
 
   h2
     color: $off-white
-    font-size: 60px
+    font-size: 55px
     font-family: 'Abel'
     letter-spacing: 1px
     font-weight: normal
     text-shadow: 0 2px 5px $richer-text
     position: absolute
-    bottom: 80px
-    left: 70px
+    bottom: 5%
+    left: 5%
 
 @media(min-width: 820px)
 
@@ -33,8 +42,8 @@
     h2
       font-size: 70px
       position: absolute
-      bottom: 80px
-      left: 70px
+      bottom: 10%
+      left: 10%
 
 
 .about-extended-wrapper
