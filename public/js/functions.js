@@ -67,7 +67,48 @@ var title = article.dataset.title;
 
   };
 
-  Greeter.init();
+  if (title === 'index') {
+    Greeter.init();
+  }
+})();
+
+(function () {
+
+  var indexAboutText = {
+    init: function init() {
+      this.cacheDOM();
+      this.bindEvents();
+    },
+    cacheDOM: function cacheDOM() {
+      this.$window = $(window);
+      this.$body = $('body');
+      this.$aboutWrapper = $('.about-wrapper');
+      this.$windowHeight = this.$window.innerHeight() - 100;
+      this.$galText = this.$aboutWrapper.find('.gallery-text');
+      this.$aboutColFigure = this.$aboutWrapper.find('.about-column-wrapper figure');
+    },
+    bindEvents: function bindEvents() {
+      this.$window.on('scroll', this.scrollEvents.bind(this));
+    },
+    scrollEvents: function scrollEvents() {
+      this.$bodyTop = this.$body.scrollTop();
+      this.$galTop = Math.floor(this.$galText.offset().top - this.$windowHeight);
+
+      if (this.$window.scrollTop() >= this.$galTop) {
+        this.$galText.addClass('active-text');
+      }
+
+      for (var i = 0; i < this.$aboutColFigure.length; i++) {
+        if (this.$window.scrollTop() >= this.$aboutColFigure[i].offsetTop - this.$windowHeight) {
+          this.$aboutColFigure[i].classList.add('active-text');
+        }
+      }
+    }
+  };
+
+  if (title === 'index') {
+    indexAboutText.init();
+  }
 })();
 
 (function () {

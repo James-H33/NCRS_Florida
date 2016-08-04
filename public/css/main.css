@@ -353,23 +353,30 @@ body {
   max-width: 1220px;
   margin: 0 auto;
   text-align: center;
-  padding: 50px 0; }
+  padding: 50px 0 0 0; }
 
 @media(min-width: 769px) {
   .about-display {
-    padding: 20px 0 60px 0;
+    padding: 20px 0 0 0;
     text-align: left; } }
 .gallery-text {
   width: 90%;
   height: auto;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 50px 0 50px 0;
+  padding: 50px 0 20px 0;
+  opacity: 0;
   text-align: center;
-  position: relative; }
+  position: relative;
+  -webkit-transition: all 1000ms ease-in-out;
+  transition: all 1000ms ease-in-out; }
+  .gallery-text.active-text {
+    opacity: 1; }
   .gallery-text h3 {
     color: rgba(40, 26, 23, 0.6);
     font-size: 17px;
-    font-weight: normal;
+    font-weight: lighter;
+    font-style: italic;
     letter-spacing: 0.4px;
     line-height: 40px;
     z-index: 10; }
@@ -388,157 +395,13 @@ body {
   font-size: 100px;
   padding: 10px 0;
   position: absolute;
-  bottom: 30px;
+  bottom: 20px;
   right: 0px;
   z-index: -1; }
 
 @media(min-width: 769px) {
   .qoute-two {
     right: 30px; } }
-.about-ncrs-wrapper {
-  width: 100%; }
-
-@media(min-width: 769px) {
-  .about-ncrs-wrapper {
-    width: 32%;
-    display: inline-block;
-    margin-right: 0;
-    text-align: center; } }
-.about-title {
-  width: 95%;
-  height: auto;
-  margin: 0 auto;
-  padding: 20px 0 20px; }
-  .about-title h2 {
-    color: #535454;
-    font-size: 28px;
-    font-family: "Abel"; }
-
-.about-info {
-  width: 95%;
-  height: auto;
-  margin: 0 auto;
-  padding-bottom: 20px; }
-  .about-info p {
-    color: rgba(40, 26, 23, 0.6);
-    font-size: 14px;
-    letter-spacing: 0.4px;
-    line-height: 30px; }
-
-.about-join-button {
-  width: auto;
-  height: 50px; }
-  .about-join-button a {
-    width: auto;
-    height: 40px;
-    color: #d2a26c;
-    font-size: 12px;
-    font-weight: bold;
-    text-decoration: none;
-    letter-spacing: 1px;
-    background: transparent;
-    padding: 10px;
-    border: 2px solid #d2a26c;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    -webkit-transition: all 450ms ease-in-out;
-    transition: all 450ms ease-in-out; }
-    .about-join-button a:hover {
-      color: #fff;
-      background: #d2a26c;
-      -webkit-transform: translateY(-3px);
-      transform: translateY(-3px); }
-
-@media(min-width: 769px) {
-  .about-title h2 {
-    color: #535454;
-    font-size: 24px; }
-
-  .about-info p {
-    font-size: 14px; } }
-.about-facebook-wrapper {
-  width: 100%;
-  height: 100%;
-  padding: 30px 0;
-  text-align: center; }
-
-@media(min-width: 769px) {
-  .about-facebook-wrapper {
-    width: 32%;
-    height: 100%;
-    display: inline-block;
-    vertical-align: top;
-    padding: 0; } }
-.facebook-header {
-  width: 95%;
-  height: auto;
-  margin: 0 auto;
-  padding: 20px 0 20px; }
-  .facebook-header h2 {
-    color: #535454;
-    font-size: 24px;
-    font-family: "Abel"; }
-  .facebook-header p {
-    width: 80%;
-    color: rgba(40, 26, 23, 0.6);
-    font-size: 14px;
-    line-height: 30px;
-    padding: 20px 0 0 0;
-    letter-spacing: 0.4px;
-    margin: 0 auto; }
-
-.facebook-link {
-  width: 95%;
-  height: auto;
-  margin: 0 auto;
-  padding: 30px 0 0 0; }
-  .facebook-link a {
-    width: auto;
-    height: 40px;
-    color: #d2a26c;
-    font-size: 12px;
-    font-weight: bold;
-    text-decoration: none;
-    letter-spacing: 1px;
-    background: transparent;
-    padding: 10px;
-    border: 2px solid #d2a26c;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    -webkit-transition: all 450ms ease-in-out;
-    transition: all 450ms ease-in-out; }
-    .facebook-link a:hover {
-      color: #fff;
-      background: #d2a26c;
-      -webkit-transform: translateY(-3px);
-      transform: translateY(-3px); }
-
-.ncrsfl-link {
-  width: 95%;
-  height: auto;
-  margin: 0 auto;
-  padding: 30px 0 0 0; }
-  .ncrsfl-link a {
-    width: auto;
-    height: 40px;
-    color: #d2a26c;
-    font-size: 12px;
-    font-weight: bold;
-    text-decoration: none;
-    letter-spacing: 1px;
-    background: transparent;
-    padding: 10px;
-    border: 2px solid #d2a26c;
-    -webkit-transform: translateY(0);
-    transform: translateY(0);
-    -webkit-transition: all 450ms ease-in-out;
-    transition: all 450ms ease-in-out; }
-    .ncrsfl-link a:hover {
-      color: #fff;
-      background: #d2a26c;
-      -webkit-transform: translateY(-3px);
-      transform: translateY(-3px); }
-
 .events-wrapper {
   width: 100%;
   height: 50vh;
@@ -568,6 +431,82 @@ body {
   z-index: -2; }
 
 .active-slide {
+  opacity: 1; }
+
+.about-column-wrapper {
+  width: 100%;
+  height: 100%;
+  padding: 0 0 70px 0; }
+
+.about-column-display {
+  width: 90%;
+  height: 100%;
+  max-width: 1220px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0 0 0; }
+
+.about-col-container {
+  width: 100%;
+  height: 100%;
+  padding: 30px 0;
+  text-align: center;
+  opacity: 0;
+  -webkit-transition: all 1000ms ease-in-out;
+  transition: all 1000ms ease-in-out; }
+
+@media(min-width: 769px) {
+  .about-col-container {
+    width: 32%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+    padding: 0; } }
+.about-col-header {
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  padding: 20px 0 20px; }
+  .about-col-header h2 {
+    color: #535454;
+    font-size: 24px;
+    font-family: "Abel"; }
+  .about-col-header p {
+    width: 80%;
+    color: rgba(40, 26, 23, 0.6);
+    font-size: 14px;
+    line-height: 30px;
+    padding: 20px 0 0 0;
+    letter-spacing: 0.4px;
+    margin: 0 auto; }
+
+.about-col-link {
+  width: 95%;
+  height: auto;
+  margin: 0 auto;
+  padding: 30px 0 0 0; }
+  .about-col-link a {
+    width: auto;
+    height: 40px;
+    color: #d2a26c;
+    font-size: 12px;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 1px;
+    background: transparent;
+    padding: 10px;
+    border: 2px solid #d2a26c;
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    -webkit-transition: all 450ms ease-in-out;
+    transition: all 450ms ease-in-out; }
+    .about-col-link a:hover {
+      color: #fff;
+      background: #d2a26c;
+      -webkit-transform: translateY(-3px);
+      transform: translateY(-3px); }
+
+.active-text {
   opacity: 1; }
 
 .membership-intro-wrapper {
