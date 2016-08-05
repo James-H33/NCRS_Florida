@@ -91,7 +91,6 @@ var title = article.dataset.title;
       this.$window.on('scroll', this.scrollEvents.bind(this));
     },
     scrollEvents: function scrollEvents() {
-      this.$bodyTop = this.$body.scrollTop();
       this.$galTop = Math.floor(this.$galText.offset().top - this.$windowHeight);
 
       if (this.$window.scrollTop() >= this.$galTop) {
@@ -267,6 +266,7 @@ var title = article.dataset.title;
     cacheDOM: function cacheDOM() {
       this.$body = $('body');
       this.$window = $(window);
+      this.$w_height = this.$window.innerHeight() - 300;
       this.$futureSlideContainer = $('.future-slide-container');
     },
     bindEvents: function bindEvents() {
@@ -277,14 +277,9 @@ var title = article.dataset.title;
       this.$futureSlideContainer[0].classList.add('active-future-slide');
     },
     addClasses: function addClasses() {
-      var scrollHTML = $('html').scrollTop();
-      var scrollBody = $('body').scrollTop();
-      var w_height = this.$window.innerHeight();
-
-      // Add a ID to the next event section in order to fire off event correctly
-      //   if (scrollHTML > this.$nationalMem.offset().top - (w_height / 2) || scrollBody > this.$nationalMem.offset().top - (w_height / 2)) {
-      //      this.$memSlideContainer[1].classList.add('active-member-slide');
-      //   }
+      if (this.$window.scrollTop() >= this.$futureSlideContainer[1].offsetTop - this.$w_height) {
+        this.$futureSlideContainer[1].classList.add('active-future-slide');
+      }
     }
   };
 

@@ -83,7 +83,7 @@ const title = article.dataset.title;
     init: function() {
       this.cacheDOM();
       this.bindEvents();
-    }, 
+    },
     cacheDOM: function() {
       this.$window          = $(window);
       this.$body            = $('body');
@@ -91,13 +91,12 @@ const title = article.dataset.title;
       this.$windowHeight    = this.$window.innerHeight() - 100;
       this.$galText         = this.$aboutWrapper.find('.gallery-text');
       this.$aboutColFigure  = this.$aboutWrapper.find('.about-column-wrapper figure');
-    }, 
+    },
     bindEvents: function() {
       this.$window.on('scroll', this.scrollEvents.bind(this));
-    }, 
+    },
     scrollEvents: function() {
-      this.$bodyTop   = this.$body.scrollTop();
-      this.$galTop    = Math.floor(this.$galText.offset().top - (this.$windowHeight));
+      this.$galTop = Math.floor(this.$galText.offset().top - (this.$windowHeight));
 
 
       if (this.$window.scrollTop() >= this.$galTop) {
@@ -107,7 +106,7 @@ const title = article.dataset.title;
       for (var i = 0; i < this.$aboutColFigure.length; i++) {
         if (this.$window.scrollTop() >= (this.$aboutColFigure[i].offsetTop - this.$windowHeight)) {
           this.$aboutColFigure[i].classList.add('active-text');
-        } 
+        }
       }
     }
   }
@@ -278,9 +277,10 @@ const title = article.dataset.title;
       this.bindEvents();
     },
     cacheDOM: function() {
-      this.$body              = $('body');
-      this.$window            = $(window);
-      this.$futureSlideContainer = $('.future-slide-container');
+      this.$body                    = $('body');
+      this.$window                  = $(window);
+      this.$w_height                = this.$window.innerHeight() - 300;
+      this.$futureSlideContainer    = $('.future-slide-container');
     },
     bindEvents: function() {
       this.$window.on('load', this.pageLoad.bind(this));
@@ -290,14 +290,9 @@ const title = article.dataset.title;
       this.$futureSlideContainer[0].classList.add('active-future-slide');
     },
     addClasses: function() {
-      var scrollHTML = $('html').scrollTop();
-      var scrollBody = $('body').scrollTop();
-      var w_height = this.$window.innerHeight();
-
-    // Add a ID to the next event section in order to fire off event correctly
-    //   if (scrollHTML > this.$nationalMem.offset().top - (w_height / 2) || scrollBody > this.$nationalMem.offset().top - (w_height / 2)) {
-    //      this.$memSlideContainer[1].classList.add('active-member-slide');
-    //   }
+        if (this.$window.scrollTop() >= (this.$futureSlideContainer[1].offsetTop - this.$w_height )) {
+            this.$futureSlideContainer[1].classList.add('active-future-slide');
+        }
     }
   }
 
