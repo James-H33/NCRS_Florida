@@ -269,11 +269,14 @@ var title = article.dataset.title;
       this.$w_height = this.$window.innerHeight() - 300;
       this.$futureSlideContainer = $('.future-slide-container');
       this.$hotel = this.$body.find('.hotel');
+      this.$hotelInfoContainer = this.$body.find('.hotel-info-container');
+      this.$hotelClose = this.$body.find('.hotel-close');
     },
     bindEvents: function bindEvents() {
       this.$window.on('load', this.pageLoad.bind(this));
       this.$window.on('scroll', this.activeSlider.bind(this));
       this.$hotel.on('click', this.openHotelDetails.bind(this));
+      this.$hotelClose.on('click', this.openHotelDetails.bind(this));
     },
     pageLoad: function pageLoad() {
       this.$futureSlideContainer[0].classList.add('active-future-slide');
@@ -284,8 +287,8 @@ var title = article.dataset.title;
       }
     },
     openHotelDetails: function openHotelDetails(event) {
-      var currentHotel = event.target.closest('.hotel');
-      currentHotel.classList.toggle('active-hotel');
+      // var currentHotel = event.target.closest('.hotel');
+      this.$hotelInfoContainer.toggleClass('active-hotel');
     }
   };
 
