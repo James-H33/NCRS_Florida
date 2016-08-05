@@ -5,7 +5,7 @@ const app     = express();
 const MembershipRoute   = require('./routes/membership');
 const ContactsRoute     = require('./routes/contacts');
 const AboutRoute        = require('./routes/about');
-const FutureRoute       = require('./routes/future-events');
+const EventsRoute       = require('./routes/events');
 
 // Ports
 const port = process.env.PORT || 5000;
@@ -23,7 +23,7 @@ app.get('/', function(req, res) {
 app.use('/', MembershipRoute);
 app.use('/', ContactsRoute);
 app.use('/', AboutRoute);
-app.use('/', FutureRoute);
+app.use('/', EventsRoute);
 
 
 app.listen(port, portIP, function() {
