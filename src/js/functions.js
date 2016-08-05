@@ -281,18 +281,24 @@ const title = article.dataset.title;
       this.$window                  = $(window);
       this.$w_height                = this.$window.innerHeight() - 300;
       this.$futureSlideContainer    = $('.future-slide-container');
+      this.$hotel                   = this.$body.find('.hotel');
     },
     bindEvents: function() {
       this.$window.on('load', this.pageLoad.bind(this));
-      this.$window.on('scroll', this.addClasses.bind(this));
+      this.$window.on('scroll', this.activeSlider.bind(this));
+      this.$hotel.on('click', this.openHotelDetails.bind(this));
     },
     pageLoad: function() {
       this.$futureSlideContainer[0].classList.add('active-future-slide');
     },
-    addClasses: function() {
+    activeSlider: function() {
         if (this.$window.scrollTop() >= (this.$futureSlideContainer[1].offsetTop - this.$w_height )) {
             this.$futureSlideContainer[1].classList.add('active-future-slide');
         }
+    },
+    openHotelDetails: function(event) {
+        var currentHotel = event.target.closest('.hotel');
+        currentHotel.classList.toggle('active-hotel');
     }
   }
 

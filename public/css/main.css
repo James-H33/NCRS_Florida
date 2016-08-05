@@ -1158,11 +1158,19 @@ body {
 .hotel {
   max-height: 25px;
   overflow: hidden;
-  -webkit-transition: all 1200ms ease-in-out;
-  transition: all 1200ms ease-in-out;
+  -webkit-transition: all 1000ms ease-in-out;
+  transition: all 1000ms ease-in-out;
   cursor: pointer; }
-  .hotel:hover {
+  .hotel.active-hotel {
     max-height: 300px; }
+    .hotel.active-hotel i {
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg); }
+  .hotel i {
+    color: #535454;
+    padding: 0 5px;
+    -webkit-transition: all 450ms ease-in-out;
+    transition: all 450ms ease-in-out; }
   .hotel h5 {
     color: #535454;
     font-size: 16px;
@@ -1176,6 +1184,12 @@ body {
     font-weight: normal;
     padding: 5px 0 5px 15px; }
 
+@media(min-width: 769px) {
+  .hotel:hover {
+    max-height: 300px; }
+    .hotel:hover i {
+      -webkit-transform: rotate(180deg);
+      transform: rotate(180deg); } }
 .future-button {
   padding: 30px 0;
   text-align: center; }

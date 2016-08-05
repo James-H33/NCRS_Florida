@@ -148,10 +148,17 @@
 .hotel
   max-height: 25px
   overflow: hidden
-  transition: $longer-trans
+  transition: $long-trans
   cursor: pointer
-  &:hover
+  &.active-hotel
     max-height: 300px
+    i
+      transform: rotate(180deg)
+
+  i
+    color: $dark-text
+    padding: 0 5px
+    transition: $mid-trans
 
   h5
     color: $dark-text
@@ -166,6 +173,15 @@
     font-family: 'Open Sans'
     font-weight: normal
     padding: 5px 0 5px 15px
+
+@media(min-width: 769px)
+
+  .hotel
+    &:hover
+      max-height: 300px
+      i
+        transform: rotate(180deg)
+
 
 
 .future-button
