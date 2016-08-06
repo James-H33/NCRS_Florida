@@ -95,7 +95,7 @@
   background: #fff
   position: absolute
   left: 100%
-  z-index: 10
+  z-index: 5
   transition: $mid-trans
 
   &.active-hotel
@@ -198,15 +198,6 @@
   overflow: hidden
   transition: $long-trans
   cursor: pointer
-  &.active-hotel
-    max-height: 300px
-    i
-      transform: rotate(180deg)
-
-  i
-    color: $dark-text
-    padding: 0 5px
-    transition: $mid-trans
 
   h5
     color: $dark-text
@@ -221,15 +212,6 @@
     font-family: 'Open Sans'
     font-weight: normal
     padding: 5px 0 5px 15px
-
-@media(min-width: 769px)
-
-  .hotel
-    &:hover
-      max-height: 300px
-      i
-        transform: rotate(180deg)
-
 
 
 .future-button
