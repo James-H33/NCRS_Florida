@@ -178,23 +178,7 @@ var title = article.dataset.title;
     },
     activeMenu: function activeMenu(i) {
       this.$aboutLeftLi.removeClass();
-      if (i === 0) {
-        this.$aboutLeftLi[0].classList.add('active-li');
-      }
-      if (i === 1) {
-        this.$aboutLeftLi[1].classList.add('active-li');
-      }
-      if (i === 2) {
-        this.$aboutLeftLi[2].classList.add('active-li');
-      }
-
-      if (i === 3) {
-        this.$aboutLeftLi[3].classList.add('active-li');
-      }
-
-      if (i === 4) {
-        this.$aboutLeftLi[4].classList.add('active-li');
-      }
+      this.$aboutLeftLi[i].classList.add('active-li');
     },
     listen: function listen() {
       this.$x = this.$body.scrollTop();
@@ -202,7 +186,8 @@ var title = article.dataset.title;
 
       if (this.$aboutTop <= this.$aboutRest.offset().top) {
         this.activeMenu(0);
-      } else if (this.$aboutTop >= this.$aboutRest.offset().top - this.$windowHeight * .30) {
+      }
+      if (this.$aboutTop >= this.$aboutRest.offset().top - this.$windowHeight * .30) {
         this.activeMenu(1);
       }
       if (this.$aboutTop >= this.$aboutNews.offset().top - this.$windowHeight * .35) {
@@ -224,29 +209,17 @@ var title = article.dataset.title;
     animateMenu: function animateMenu(event) {
       var $self = $(event.target);
 
-      if ($self.text() === 'NCRS') {
-        $('html, body').animate({
-          scrollTop: this.$aboutRight.offset().top - this.$windowHeight * .32
-        }, 1200);
-      } else if ($self.text() === 'MAGAZINE') {
-        $('html, body').animate({
-          scrollTop: this.$aboutRest.offset().top - this.$windowHeight * .30
-        }, 1200);
-      }
-      if ($self.text() === 'NEWS LETTER') {
-        $('html, body').animate({
-          scrollTop: this.$aboutNews.offset().top - this.$windowHeight * .30
-        }, 1200);
-      }
-      if ($self.text() === 'NCRS JUDGING') {
-        $('html, body').animate({
-          scrollTop: this.$aboutJudge.offset().top - this.$windowHeight * .30
-        }, 1200);
-      }
-      if ($self.text() === 'NATIONWIDE EVENTS') {
-        $('html, body').animate({
-          scrollTop: this.$aboutEvents.offset().top - this.$windowHeight * .30
-        }, 1200);
+      var myObj = {
+        textArray: ['NCRS', 'MAGAZINE', 'NEWS LETTER', 'NCRS JUDGING', 'NATIONWIDE EVENTS'],
+        elemArray: [this.$aboutRight.offset().top, this.$aboutRest.offset().top, this.$aboutNews.offset().top, this.$aboutJudge.offset().top, this.$aboutEvents.offset().top]
+      };
+
+      for (var i = 0; i < myObj.elemArray.length; i++) {
+        if ($self.text() === myObj.textArray[i]) {
+          $('html, body').animate({
+            scrollTop: myObj.elemArray[i] - this.$windowHeight * .32
+          }, 1200);
+        }
       }
     }
   };
