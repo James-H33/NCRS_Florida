@@ -4,6 +4,13 @@ article#article(data-title="past")
 
 section.event-gallery-wrapper
     div.event-gallery-display
+        div.event-gallery-row
+        h2 Howey in the Hills
+        - for (var i = 1; i <= 12; i++) {
+            div.thumbnail
+                img(src="/imgs/howey-in-the-hills/howey_"+i+".jpg")
+        - }
+        
 
 
 include ../partials/footer

@@ -4,6 +4,8 @@
 
 "use strict";
 
+function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
 var article = document.getElementById('article');
 var title = article.dataset.title;
 
@@ -19,6 +21,7 @@ var title = article.dataset.title;
       this.$menuButton = this.$body.find('.menu-button');
       this.$closeButton = this.$body.find('.menu-close');
       this.$headerWrapper = this.$body.find('.header-wrapper');
+      this.$headerLinksLi = this.$body.find('.header-links li');
     },
     bindEvents: function bindEvents() {
       this.$menuButton.on('click', this.openMenu.bind(this));
@@ -27,10 +30,23 @@ var title = article.dataset.title;
     openMenu: function openMenu() {
       this.$headerWrapper.addClass('active-menu');
       this.$body.addClass('active-menu');
+
+      for (var i = 0; i < 5; i++) {
+        this.doSetTiming(i);
+      }
     },
     closeMenu: function closeMenu() {
       this.$headerWrapper.removeClass('active-menu');
       this.$body.removeClass('active-menu');
+      this.$headerLinksLi.removeClass('active-links');
+    },
+    doSetTiming: function doSetTiming(i) {
+      var myArray = [];
+      myArray.push.apply(myArray, _toConsumableArray(this.$headerLinksLi));
+
+      setTimeout(function () {
+        myArray[i].classList.add('active-links');
+      }, i * 100);
     }
   };
 
@@ -267,8 +283,6 @@ var title = article.dataset.title;
     openHotelDetails: function openHotelDetails(event) {
       var selectedHotel = event.target.closest('.hotel');
       var position = selectedHotel.dataset.position;
-      console.log(selectedHotel);
-      console.log(this.$hotelInfoContainer);
       this.$hotelInfoContainer[position].classList.add('active-hotel');
     },
     closeHotelDetails: function closeHotelDetails() {

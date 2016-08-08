@@ -20,6 +20,7 @@ const title = article.dataset.title;
       this.$menuButton    = this.$body.find('.menu-button');
       this.$closeButton   = this.$body.find('.menu-close');
       this.$headerWrapper = this.$body.find('.header-wrapper');
+      this.$headerLinksLi   = this.$body.find('.header-links li');
     },
     bindEvents: function() {
       this.$menuButton.on('click', this.openMenu.bind(this));
@@ -28,10 +29,24 @@ const title = article.dataset.title;
     openMenu: function() {
       this.$headerWrapper.addClass('active-menu');
       this.$body.addClass('active-menu');
+
+      for(var i = 0; i < 5; i++) {
+        this.doSetTiming(i);
+      }
+       
     },
     closeMenu: function() {
       this.$headerWrapper.removeClass('active-menu');
       this.$body.removeClass('active-menu');
+      this.$headerLinksLi.removeClass('active-links');
+    }, 
+    doSetTiming: function(i) {
+      var myArray = [];
+      myArray.push(...this.$headerLinksLi);
+
+       setTimeout(()=> {
+           myArray[i].classList.add('active-links');
+        }, i * 100);
     }
   }
 
@@ -294,8 +309,6 @@ const title = article.dataset.title;
     openHotelDetails: function(event) {
         var selectedHotel = event.target.closest('.hotel');
         var position = selectedHotel.dataset.position;
-        console.log(selectedHotel);
-        console.log(this.$hotelInfoContainer);
         this.$hotelInfoContainer[position].classList.add('active-hotel');
     },
     closeHotelDetails: function () {
