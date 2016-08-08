@@ -284,8 +284,7 @@ const title = article.dataset.title;
       this.$hotelClose.on('click', this.closeHotelDetails.bind(this));
     },
     pageLoad: function() {
-            this.$futureSlideContainer[0].classList.add('active-future-slide');
-    
+        this.$futureSlideContainer[0].classList.add('active-future-slide');
     },
     activeSlider: function() {
         if (this.$window.scrollTop() >= (this.$futureSlideContainer[1].offsetTop - this.$w_height )) {
