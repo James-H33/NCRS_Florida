@@ -46,7 +46,7 @@ var title = article.dataset.title;
 
       setTimeout(function () {
         myArray[i].classList.add('active-links');
-      }, i * 100);
+      }, i * 75);
     }
   };
 

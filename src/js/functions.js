@@ -41,12 +41,12 @@ const title = article.dataset.title;
       this.$headerLinksLi.removeClass('active-links');
     }, 
     doSetTiming: function(i) {
-      var myArray = [];
+      let myArray = [];
       myArray.push(...this.$headerLinksLi);
 
        setTimeout(()=> {
            myArray[i].classList.add('active-links');
-        }, i * 100);
+        }, i * 75);
     }
   }
 
@@ -321,3 +321,5 @@ const title = article.dataset.title;
   }
 
 })();
+
+
