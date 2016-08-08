@@ -154,7 +154,7 @@ var title = article.dataset.title;
 
 (function () {
 
-  var AboutMenu = {
+  var AboutPage = {
     init: function init() {
       this.cacheDOM();
       this.bindEvents();
@@ -170,11 +170,13 @@ var title = article.dataset.title;
       this.$aboutJudge = this.$body.find('.about-right-judge');
       this.$aboutEvents = this.$body.find('.about-right-events');
       this.$aboutIntroWrapper = this.$body.find('.about-intro-wrapper');
+      this.$aboutGreeting = this.$body.find('.about-intro-display h2');
       this.$windowHeight = this.$window.innerHeight();
     },
     bindEvents: function bindEvents() {
       this.$window.on('scroll', this.listen.bind(this));
       this.$aboutLeftLi.on('click', this.animateMenu.bind(this));
+      this.$window.on('load', this.aboutGreeting.bind(this));
     },
     activeMenu: function activeMenu(i) {
       this.$aboutLeftLi.removeClass();
@@ -221,11 +223,14 @@ var title = article.dataset.title;
           }, 1200);
         }
       }
+    },
+    aboutGreeting: function aboutGreeting() {
+      this.$aboutGreeting.addClass('active-greet');
     }
   };
 
   if (title === 'about') {
-    AboutMenu.init();
+    AboutPage.init();
   }
 })();
 
@@ -249,7 +254,7 @@ var title = article.dataset.title;
       this.$window.on('load', this.pageLoad.bind(this));
       this.$window.on('scroll', this.activeSlider.bind(this));
       this.$hotel.on('click', this.openHotelDetails.bind(this));
-      this.$hotelClose.on('click', this.openHotelDetails.bind(this));
+      this.$hotelClose.on('click', this.closeHotelDetails.bind(this));
     },
     pageLoad: function pageLoad() {
       this.$futureSlideContainer[0].classList.add('active-future-slide');
@@ -260,8 +265,14 @@ var title = article.dataset.title;
       }
     },
     openHotelDetails: function openHotelDetails(event) {
-      // var currentHotel = event.target.closest('.hotel');
-      this.$hotelInfoContainer.toggleClass('active-hotel');
+      var selectedHotel = event.target.closest('.hotel');
+      var position = selectedHotel.dataset.position;
+      console.log(selectedHotel);
+      console.log(this.$hotelInfoContainer);
+      this.$hotelInfoContainer[position].classList.add('active-hotel');
+    },
+    closeHotelDetails: function closeHotelDetails() {
+      this.$hotelInfoContainer.removeClass('active-hotel');
     }
   };
 

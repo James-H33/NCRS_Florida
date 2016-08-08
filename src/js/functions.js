@@ -164,7 +164,7 @@ const title = article.dataset.title;
 
 (function() {
 
-  const AboutMenu = {
+  const AboutPage = {
     init: function() {
       this.cacheDOM();
       this.bindEvents();
@@ -179,12 +179,14 @@ const title = article.dataset.title;
       this.$aboutNews          = this.$body.find('.about-right-news');
       this.$aboutJudge         = this.$body.find('.about-right-judge');
       this.$aboutEvents        = this.$body.find('.about-right-events');
-      this.$aboutIntroWrapper  = this.$body.find('.about-intro-wrapper')
+      this.$aboutIntroWrapper  = this.$body.find('.about-intro-wrapper');
+      this.$aboutGreeting      = this.$body.find('.about-intro-display h2');
       this.$windowHeight       = this.$window.innerHeight();
     },
     bindEvents: function() {
       this.$window.on('scroll', this.listen.bind(this));
       this.$aboutLeftLi.on('click', this.animateMenu.bind(this));
+      this.$window.on('load', this.aboutGreeting.bind(this));
     },
     activeMenu: function(i) {
       this.$aboutLeftLi.removeClass();
@@ -245,11 +247,15 @@ const title = article.dataset.title;
           }
         }
 
+    },
+    aboutGreeting: function() {
+        this.$aboutGreeting.addClass('active-greet');
     }
   }
 
+
   if (title === 'about') {
-    AboutMenu.init();
+    AboutPage.init();
   }
 
 })();
@@ -275,10 +281,11 @@ const title = article.dataset.title;
       this.$window.on('load', this.pageLoad.bind(this));
       this.$window.on('scroll', this.activeSlider.bind(this));
       this.$hotel.on('click', this.openHotelDetails.bind(this));
-      this.$hotelClose.on('click', this.openHotelDetails.bind(this));
+      this.$hotelClose.on('click', this.closeHotelDetails.bind(this));
     },
     pageLoad: function() {
-      this.$futureSlideContainer[0].classList.add('active-future-slide');
+            this.$futureSlideContainer[0].classList.add('active-future-slide');
+    
     },
     activeSlider: function() {
         if (this.$window.scrollTop() >= (this.$futureSlideContainer[1].offsetTop - this.$w_height )) {
@@ -286,8 +293,14 @@ const title = article.dataset.title;
         }
     },
     openHotelDetails: function(event) {
-        // var currentHotel = event.target.closest('.hotel');
-        this.$hotelInfoContainer.toggleClass('active-hotel');
+        var selectedHotel = event.target.closest('.hotel');
+        var position = selectedHotel.dataset.position;
+        console.log(selectedHotel);
+        console.log(this.$hotelInfoContainer);
+        this.$hotelInfoContainer[position].classList.add('active-hotel');
+    },
+    closeHotelDetails: function () {
+        this.$hotelInfoContainer.removeClass('active-hotel');
     }
   }
 
