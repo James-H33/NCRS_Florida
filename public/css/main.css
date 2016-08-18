@@ -573,8 +573,8 @@ body {
   -webkit-transform: translateX(50%);
   transform: translateX(50%);
   opacity: 0;
-  -webkit-transition: all 1000ms cubic-bezier(0.22, 0.61, 0.46, 1.2);
-  transition: all 1000ms cubic-bezier(0.22, 0.61, 0.46, 1.2); }
+  -webkit-transition: all 1200ms cubic-bezier(0.22, 0.61, 0.12, 0.93);
+  transition: all 1200ms cubic-bezier(0.22, 0.61, 0.12, 0.93); }
   .membership-slide-container.active-member-slide {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -723,16 +723,17 @@ body {
   overflow: hidden; }
   .about-intro-display h2 {
     color: #e6e7e7;
-    font-size: 55px;
+    font-size: 60px;
     font-family: "Abel";
-    letter-spacing: 1px;
-    font-weight: normal;
+    font-weight: bold;
+    display: block;
     text-shadow: 0 2px 5px #262626;
+    letter-spacing: 2px;
     position: absolute;
     bottom: 50px;
     left: calc(50% - 107px);
-    -webkit-transition: all 1000ms cubic-bezier(0.22, 0.61, 0.46, 1.2);
-    transition: all 1000ms cubic-bezier(0.22, 0.61, 0.46, 1.2);
+    -webkit-transition: all 1200ms cubic-bezier(0.22, 0.61, 0.12, 0.93);
+    transition: all 1200ms cubic-bezier(0.22, 0.61, 0.12, 0.93);
     -webkit-transform: translateY(150px);
     transform: translateY(150px); }
     .about-intro-display h2.active-greet {
@@ -1099,8 +1100,8 @@ body {
   -webkit-transform: translateX(100px);
   transform: translateX(100px);
   opacity: 0;
-  -webkit-transition: all 1000ms cubic-bezier(0.22, 0.61, 0.46, 1.2);
-  transition: all 1000ms cubic-bezier(0.22, 0.61, 0.46, 1.2); }
+  -webkit-transition: all 1200ms cubic-bezier(0.22, 0.61, 0.12, 0.93);
+  transition: all 1200ms cubic-bezier(0.22, 0.61, 0.12, 0.93); }
   .future-slide-container.active-future-slide {
     -webkit-transform: translateX(0);
     transform: translateX(0);
