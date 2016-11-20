@@ -294,3 +294,101 @@ var title = article.dataset.title;
     Future.init();
   }
 })();
+
+(function () {
+
+  var Admin = {
+    init: function init() {
+      this.cacheDOM();
+      this.bindEvents();
+    },
+    cacheDOM: function cacheDOM() {
+      this.$container = $('.admin-container');
+      this.$inputs = $(this.$container).find('input');
+      this.$loginBtn = $(this.$container).find('button');
+    },
+    bindEvents: function bindEvents() {
+      this.$loginBtn.on('click', this.login.bind(this));
+    },
+    login: function login() {
+      var root = window.location.origin;
+      var data = 'Some data!';
+      console.log('Login!');
+
+      var results = userRequest(data);
+
+      function userRequest(postData) {
+        $.ajax({
+          url: root + '/admin/login',
+          type: 'POST',
+          data: postData,
+          success: function success(res) {
+            console.log(res);
+          },
+          error: function error(err) {
+            console.log(err);
+          }
+        });
+      }
+    },
+    isValidInput: function isValidInput() {
+
+      // TODO: Do some validation
+      // return if true
+
+    }
+
+  };
+
+  if (title === 'admin') {
+    Admin.init();
+  }
+})();
+
+(function () {
+
+  var Upload = {
+    init: function init() {
+      this.cacheDOM();
+      this.bindEvents();
+    },
+    cacheDOM: function cacheDOM() {
+      this.$container = $('.upload-container');
+      this.$uploadBtn = $(this.$container).find('button');
+    },
+    bindEvents: function bindEvents() {
+      this.$uploadBtn.on('click', this.uploadFiles.bind(this));
+    },
+    uploadFiles: function uploadFiles() {
+      var root = window.location.origin;
+      var data = {
+        albumName: 'springEvent',
+        files: [{ name: 'happy.txt', file: 'Binary Content Goes Here?' }]
+      };
+
+      console.log(data);
+      console.log('Upload Started!');
+
+      var results = userRequest(data);
+
+      function userRequest(postData) {
+        $.ajax({
+          url: root + '/file/upload',
+          type: 'POST',
+          data: postData,
+          success: function success(res) {
+            console.log(res);
+          },
+          error: function error(err) {
+            console.log(err);
+          }
+        });
+      }
+    }
+
+  };
+
+  if (title === 'upload') {
+    Upload.init();
+  }
+})();

@@ -15,7 +15,7 @@ gulp.task('sass', function() {
           .on('error', sass.logError)
           .pipe(plumber())
           .pipe(autoprefixer({
-            browser: 'last 2 versions',
+            browsers: 'last 2 versions',
             cascade: false
           }))
           .pipe(gulp.dest('./public/css/'))

@@ -33,13 +33,13 @@ const title = article.dataset.title;
       for(var i = 0; i < 5; i++) {
         this.doSetTiming(i);
       }
-       
+
     },
     closeMenu: function() {
       this.$headerWrapper.removeClass('active-menu');
       this.$body.removeClass('active-menu');
       this.$headerLinksLi.removeClass('active-links');
-    }, 
+    },
     doSetTiming: function(i) {
       let myArray = [];
       myArray.push(...this.$headerLinksLi);
@@ -323,3 +323,102 @@ const title = article.dataset.title;
 })();
 
 
+(function() {
+
+    const Admin = {
+        init: function() {
+            this.cacheDOM();
+            this.bindEvents();
+        },
+        cacheDOM: function() {
+            this.$container = $('.admin-container');
+            this.$inputs    = $(this.$container).find('input');
+            this.$loginBtn  = $(this.$container).find('button');
+        },
+        bindEvents: function() {
+            this.$loginBtn.on('click', this.login.bind(this));
+        },
+        login: function() {
+            var root = window.location.origin;
+            var data = 'Some data!';
+            console.log('Login!');
+
+            var results = userRequest(data);
+
+            function userRequest(postData) {
+                $.ajax({
+                    url   : root + '/admin/login',
+                    type  : 'POST',
+                    data  : postData,
+                    success: function(res) {
+                        console.log(res);
+                    },
+                    error: function(err) {
+                        console.log(err);
+                    }
+                });
+            }
+        },
+        isValidInput: function() {
+
+            // TODO: Do some validation
+            // return if true
+
+        }
+
+    }
+
+    if(title === 'admin') {
+        Admin.init();
+    }
+
+})();
+
+(function() {
+
+    const Upload = {
+        init: function() {
+            this.cacheDOM();
+            this.bindEvents();
+        },
+        cacheDOM: function() {
+            this.$container = $('.upload-container');
+            this.$uploadBtn  = $(this.$container).find('button');
+        },
+        bindEvents: function() {
+            this.$uploadBtn.on('click', this.uploadFiles.bind(this));
+        },
+        uploadFiles: function() {
+            var root = window.location.origin;
+            var data = {
+                albumName   : 'springEvent',
+                files       : [ { name: 'happy.txt', file: 'Binary Content Goes Here?' } ],
+            }
+
+            console.log(data);
+            console.log('Upload Started!');
+
+            var results = userRequest(data);
+
+            function userRequest(postData) {
+                $.ajax({
+                    url   : root + '/file/upload',
+                    type  : 'POST',
+                    data  : postData,
+                    success: function(res) {
+                        console.log(res);
+                    },
+                    error: function(err) {
+                        console.log(err);
+                    }
+                });
+            }
+        }
+
+    }
+
+    if(title === 'upload') {
+        Upload.init();
+    }
+
+})();
