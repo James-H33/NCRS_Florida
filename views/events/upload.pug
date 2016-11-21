@@ -6,7 +6,8 @@ article#article(data-title="upload")
 section.upload-container
     div.upload-display
         h2 Image Uploads
-        input(type="file")
+        input(type="text" placeholder="Album Name").album
+        input(type="file" name="uploads[]" multiple="multiple").imageInput
         button UPLOAD
 
 include ../partials/footer

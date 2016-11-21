@@ -382,28 +382,47 @@ const title = article.dataset.title;
             this.bindEvents();
         },
         cacheDOM: function() {
-            this.$container = $('.upload-container');
+            this.$container  = $('.upload-container');
             this.$uploadBtn  = $(this.$container).find('button');
+            this.$album      = $(this.$container).find('.album');
+            this.$imageInput = $(this.$container).find('.imageInput');
         },
         bindEvents: function() {
             this.$uploadBtn.on('click', this.uploadFiles.bind(this));
         },
         uploadFiles: function() {
-            var root = window.location.origin;
-            var data = {
-                albumName   : 'springEvent',
-                files       : [ { name: 'happy.txt', file: 'Binary Content Goes Here?' } ],
+            var _this   = this;
+            var root    = window.location.origin;
+            var image   = this.$imageInput[0];
+
+            var formData = new FormData();
+
+            if(image.files.length > 0) {
+                for (var i = 0; i < image.files.length; i++) {
+                    formData.append('my_image', image.files[i], image.files[i].name);
+                }
             }
 
-            console.log(data);
+            formData.append('albumName', _this.$album[0].value);
+
+            // var data = {
+            //     albumName   : _this.$album[0].value !== '' ? _this.$album[0].value : 'default',
+            //     files       : [ { name: 'happy.txt', file: 'Binary Content Goes Here?' }, { name: 'more.txt', file: 'Binary Here?' } ],
+            // }
+
+
+            // console.log(data);
             console.log('Upload Started!');
 
-            var results = userRequest(data);
+            var results = userRequest(formData);
 
             function userRequest(postData) {
                 $.ajax({
                     url   : root + '/file/upload',
                     type  : 'POST',
+                    cache: false,
+                    contentType: false,
+                    processData: false,
                     data  : postData,
                     success: function(res) {
                         console.log(res);

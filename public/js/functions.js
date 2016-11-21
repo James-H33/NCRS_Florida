@@ -74,10 +74,10 @@ var title = article.dataset.title;
       }
     },
     doSetTimeout: function doSetTimeout(i) {
-      var _this = this;
+      var _this2 = this;
 
       setTimeout(function () {
-        _this.$greeter[i].classList.add('active-greeter');
+        _this2.$greeter[i].classList.add('active-greeter');
       }, 500 * i);
     }
 
@@ -143,14 +143,14 @@ var title = article.dataset.title;
       this.$window.on('load', this.loopImages.bind(this));
     },
     slideImages: function slideImages(i) {
-      var _this2 = this;
+      var _this3 = this;
 
       setTimeout(function () {
-        _this2.$carousel[i].classList.add('active-slide');
+        _this3.$carousel[i].classList.add('active-slide');
 
         if (i === 12) {
           setTimeout(function () {
-            _this2.loopImages();
+            _this3.loopImages();
           }, 5000);
         }
       }, 5000 * i);
@@ -355,26 +355,45 @@ var title = article.dataset.title;
     cacheDOM: function cacheDOM() {
       this.$container = $('.upload-container');
       this.$uploadBtn = $(this.$container).find('button');
+      this.$album = $(this.$container).find('.album');
+      this.$imageInput = $(this.$container).find('.imageInput');
     },
     bindEvents: function bindEvents() {
       this.$uploadBtn.on('click', this.uploadFiles.bind(this));
     },
     uploadFiles: function uploadFiles() {
+      var _this = this;
       var root = window.location.origin;
-      var data = {
-        albumName: 'springEvent',
-        files: [{ name: 'happy.txt', file: 'Binary Content Goes Here?' }]
-      };
+      var image = this.$imageInput[0];
 
-      console.log(data);
+      var formData = new FormData();
+
+      if (image.files.length > 0) {
+        for (var i = 0; i < image.files.length; i++) {
+          formData.append('my_image', image.files[i], image.files[i].name);
+        }
+      }
+
+      formData.append('albumName', _this.$album[0].value);
+
+      // var data = {
+      //     albumName   : _this.$album[0].value !== '' ? _this.$album[0].value : 'default',
+      //     files       : [ { name: 'happy.txt', file: 'Binary Content Goes Here?' }, { name: 'more.txt', file: 'Binary Here?' } ],
+      // }
+
+
+      // console.log(data);
       console.log('Upload Started!');
 
-      var results = userRequest(data);
+      var results = userRequest(formData);
 
       function userRequest(postData) {
         $.ajax({
           url: root + '/file/upload',
           type: 'POST',
+          cache: false,
+          contentType: false,
+          processData: false,
           data: postData,
           success: function success(res) {
             console.log(res);
