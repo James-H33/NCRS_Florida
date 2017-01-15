@@ -17,34 +17,84 @@ router.post('/file/upload', function(req, res) {
     // store all uploads in the /uploads directory
     form.uploadDir = 'temp/images';
 
-    form.on('field', function(name, value) {
-        console.log(value);
-        if(value.length > 0) {
-            var dirPath = 'temp/' + value;
-            var results = createFolder(dirPath);
-            results.then(function(res) {
-                newPath = res;
-            }, function(err) {
-                console.log(err);
-            })
-        }
-    });
+    // form.on('field', function(name, value) {
+    //     console.log("Form Command is being called.");
+    //     console.log(name);
+    //     console.log(value);
+    //     if(value.length > 0) {
+    //         var dirPath = 'temp/' + value;
+    //         var results = createFolder(dirPath);
+    //         results.then(function(res) {
+    //             console.log("This is from line 28");
+    //             console.log(res);
+    //             newPath = res;
+    //         }, function(err) {
+    //             console.log(err);
+    //         })
+    //     }
+    // });
+
+    /* 
+     # @ param {String} type : albumName
+     # @ param {String} folderName : Name that the user wants to put the image in.
+     */
+    var fieldEvent = form.on('field', function(type, folderName) {
+                        return new Promise(function(resolve, reject) {
+                            if(folderName.length > 0) {
+                            var dirPath = 'temp/' + folderName;
+                            var results = createFolder(dirPath);
+                            results.then(function(res) {
+                                console.log("This is from line 28");
+                                resolve(res);
+                            }, function(err) {
+                                console.log(err);
+                            })
+                        }
+                        });
+                    });
 
     // When File has finished uploading rename it.
-    form.on('file', function(field, file) {
-        console.log(field);
-        fs.rename(file.path, path.join(form.uploadDir, file.name));
-    });
+    /* 
+     # @param {String} field 
+     # @param {Object} file : Contains File upload information 
+     */
+    // form.on('file', function(field, file) {
+    //     console.log("This is line 39");
+    //     console.log(field);
+    //     console.log(file);
+    //     fs.rename(file.path, path.join(form.uploadDir, file.name));
+    // });
+
+    var fileEvent = form.on('file', function(field, file) {
+                        return new Promise(function(resolve, reject) {
+                            console.log("This is line 39");
+                            console.log(field);
+                            console.log(file);
+                            fs.rename(file.path, path.join(form.uploadDir, file.name));
+                            resolve();
+                        });
+                    });
 
     // Parse Data
     form.parse(req);
 
-    console.log(form);
+    // Once all the files have been uploaded, send a response to the client
+    //  form.on('end', function() {
+    //      console.log("From line 52");
+    //      console.log(newPath);
+    //      res.send('Upload was a success!');
+    //      transferFiles(newPath);
+    //  });
+    var endEvent =  form.on('end', function() {
+                        return new Promise(function(resolve, reject) {
 
-    // once all the files have been uploaded, send a response to the client
-     form.on('end', function() {
-         res.send('Upload was a success!');
-         transferFiles(newPath);
+                        });
+                    });
+
+     Promise.all[fieldEvent, fileEvent, endEvent].then(function(values) {
+        console.log(values);
+        res.send('Upload was a success!');
+        transferFiles(newPath);
      });
 
 });
@@ -59,20 +109,24 @@ module.exports = router;
 
 function transferFiles(dirPath) {
     var tempPath = 'temp/images';
-    var destPath = dirPath + '/';
+    var destinationPath = dirPath + '/';
     var results = readDir(tempPath);
 
     results
         .then(function(res) {
             var filesArr = res;
 
+            console.log("ReadDir Results: ");
+            console.log(res);
+            console.log(destinationPath);
+
             for (var i = 0; i < filesArr.length; i++) {
                 var currentPath = tempPath + '/' + filesArr[i];
                 var currentName = filesArr[i];
                 fs.readFile(currentPath, function(err, data) {
                     console.log('Got that path yo!');
-                    console.log(destPath + currentName);
-                    var name = destPath + currentName;
+                    console.log(destinationPath + currentName);
+                    var name = destinationPath + currentName;
 
                     fs.writeFile(name, data, function(err) {
                         if(err) {
@@ -123,6 +177,7 @@ function addFiles(dirName, files) {
 
     results
         .then(function(res) {
+            console.log("I am add file res");
             console.log(res);
 
             // Grab
@@ -196,7 +251,6 @@ function readDir(path) {
             if(err) {
                 reject(err);
             }
-
             resolve(files);
         });
     });
