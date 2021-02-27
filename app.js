@@ -9,7 +9,7 @@ const ContactsRoute     = require('./routes/contacts');
 const AboutRoute        = require('./routes/about');
 const EventsRoute       = require('./routes/events');
 const AdminRoute        = require('./routes/admin');
-const FileRoutes        = require('./routes/fileSystem');
+// const FileRoutes        = require('./routes/fileSystem');
 
 
 // Express Instance
@@ -39,7 +39,7 @@ app.use('/', ContactsRoute);
 app.use('/', AboutRoute);
 app.use('/', EventsRoute);
 app.use('/', AdminRoute);
-app.use('/', FileRoutes);
+// app.use('/', FileRoutes);
 
 
 app.listen(port, portIP, function() {

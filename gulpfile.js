@@ -1,45 +1,42 @@
-const gulp         = require('gulp');
-const nodemon      = require('nodemon');
-const sass         = require('gulp-ruby-sass');
+const { series, watch, dest, src } = require('gulp');
+const sass         = require('gulp-sass');
 const uglify       = require('gulp-uglify');
 const babel        = require('gulp-babel');
 const imagemin     = require('gulp-imagemin');
 const plumber      = require('gulp-plumber');
 const browserSync  = require('browser-sync');
-const autoprefixer = require('gulp-autoprefixer');
 
-gulp.task('default', ['sass', 'scripts', 'imgs', 'browserSync'], function() {});
+function doSass(cb) {
+  src('./src/sass/main.sass')
+    .pipe(sass())
+    .on('error', sass.logError)
+    .pipe(plumber())
+    .pipe(dest('./public/css/'))
+    .pipe(browserSync.reload({stream: true}));
 
-gulp.task('sass', function() {
-  return sass('./src/sass/main.sass')
-          .on('error', sass.logError)
-          .pipe(plumber())
-          .pipe(autoprefixer({
-            browsers: 'last 2 versions',
-            cascade: false
-          }))
-          .pipe(gulp.dest('./public/css/'))
-          .pipe(browserSync.reload({stream: true}));
-});
+  cb();
+}
 
-gulp.task('scripts', function() {
-  return gulp.src('./src/js/functions.js')
-          .pipe(plumber())
-          // .pipe(uglify())
-          .pipe(babel({
-            presets: ['es2015']
-          }))
-          .pipe(gulp.dest('./public/js/'))
-          .pipe(browserSync.reload({stream: true}));
-})
+function doScripts(cb) {
+  src('./src/js/functions.js')
+    .pipe(plumber())
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(uglify())
+    .pipe(dest('./public/js/'))
+    .pipe(browserSync.reload({stream: true}));
 
-gulp.task('imgs', function() {
-  return gulp.src('./src/imgs/*')
-          .pipe(imagemin())
-          .pipe(gulp.dest('./public/imgs/'));
-})
+  cb();
+}
 
-gulp.task('browserSync', ['nodemon'], function(){
+function doImgs() {
+  return src('./src/imgs/*')
+    .pipe(imagemin())
+    .pipe(dest('./public/imgs/'));
+}
+
+function doBrowserSync(cb) {
 
   browserSync.init( null, {
     proxy: 'http://localhost:5000',
@@ -48,21 +45,13 @@ gulp.task('browserSync', ['nodemon'], function(){
     port: 7000
   });
 
-  gulp.watch('./src/sass/**/*.sass', ['sass']);
-  gulp.watch('./src/js/*.js', ['scripts']);
-  gulp.watch('./**/*.pug').on('change', browserSync.reload);
-});
+  watch('./src/sass/**/*.sass', doSass);
+  watch('./src/js/*.js', doScripts);
+  watch('./**/*.pug').on('change', browserSync.reload);
 
-gulp.task('nodemon', function(cb) {
-  var started = false;
+  cb();
+}
 
-	return nodemon({
-		script: 'app.js'
-	}).on('start', function () {
-
-		if (!started) {
-			cb();
-			started = true;
-		}
-	});
-})
+exports.build = series(doSass, doScripts, doImgs);
+exports.styles = series(doSass);
+exports.watch = series(doBrowserSync)

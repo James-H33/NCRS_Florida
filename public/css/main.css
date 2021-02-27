@@ -60,12 +60,15 @@ body {
 .topbar-brand {
   width: auto;
   height: 100%;
-  display: table; }
+  display: grid; }
+  .topbar-brand a {
+    text-decoration: none; }
   .topbar-brand h1 {
     color: #262626;
     font-size: 20px;
-    font-family: "Abel";
+    font-family: 'Abel';
     display: table-cell;
+    padding-top: 14px;
     letter-spacing: 2px;
     vertical-align: middle; }
 
@@ -90,9 +93,10 @@ body {
     .menu-button span:nth-of-type(3) {
       top: 16px; }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .topbar-wrapper {
     display: none; } }
+
 .header-wrapper {
   width: 100%;
   height: 100vh;
@@ -106,7 +110,7 @@ body {
     right: 0;
     box-shadow: 0 2px 8px rgba(41, 41, 41, 0.4); }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .header-wrapper {
     width: 100%;
     height: 60px;
@@ -114,6 +118,7 @@ body {
     box-shadow: 0 0px 3px rgba(41, 41, 41, 0.1);
     position: fixed;
     right: 0; } }
+
 .menu-close {
   width: 30px;
   height: 30px;
@@ -135,9 +140,10 @@ body {
       top: 10px;
       transform: rotate(-45deg); }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .menu-close {
     display: none; } }
+
 .header-display {
   width: calc(100% - 20px);
   height: 100%;
@@ -151,10 +157,12 @@ body {
   margin: 0 auto;
   text-align: center;
   padding: 50px 0 20px 0; }
+  .header-brand a {
+    text-decoration: none; }
   .header-brand h1 {
     color: #262626;
     font-size: 28px;
-    font-family: "Abel";
+    font-family: 'Abel';
     padding: 10px 0;
     letter-spacing: 2px; }
     .header-brand h1:first-of-type {
@@ -162,13 +170,16 @@ body {
   .header-brand img {
     width: 75%; }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .header-brand {
     width: auto;
     height: 100%;
     float: left;
-    display: table;
+    display: grid;
     padding: 0; }
+    .header-brand a {
+      text-decoration: none;
+      padding: 15px 0; }
     .header-brand h1 {
       font-size: 26px;
       padding: 0 5px 0 3px;
@@ -178,6 +189,7 @@ body {
         display: table-cell; }
     .header-brand img {
       display: none; } }
+
 .header-links {
   width: auto;
   height: auto; }
@@ -201,7 +213,7 @@ body {
     letter-spacing: 2px;
     text-decoration: none; }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .header-links {
     width: auto;
     height: 100%;
@@ -231,7 +243,7 @@ body {
       letter-spacing: 0;
       text-decoration: none; }
       .header-links a:after {
-        content: "";
+        content: '';
         display: block;
         border-bottom: 2px solid #d2a26c;
         width: 0;
@@ -242,6 +254,7 @@ body {
         color: #535454; }
         .header-links a:hover:after {
           width: 40%; } }
+
 .active-link:after {
   width: 40%; }
 
@@ -323,9 +336,10 @@ body {
   transition: all 1200ms ease-in-out;
   background-attachment: initial; }
 
-@media(min-width: 769px) {
+@media (min-width: 769px) {
   #index-wrapper {
     background-attachment: fixed; } }
+
 .index-overlay {
   width: 100%;
   height: calc(100% - 100px);
@@ -371,13 +385,15 @@ body {
     opacity: 1;
     transform: translateY(0); }
 
-@media(min-width: 500px) {
+@media (min-width: 500px) {
   .greeter {
     font-size: 80px;
     display: block; } }
-@media(min-width: 769px) {
+
+@media (min-width: 769px) {
   .greeter {
     font-size: 100px; } }
+
 .page-slide-button {
   width: 50px;
   height: 50px;
@@ -399,7 +415,7 @@ body {
     .page-slide-button i:nth-of-type(2) {
       top: 8px; }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .page-slide-button {
     left: 7%; }
     .page-slide-button:hover i:nth-of-type(1) {
@@ -410,6 +426,7 @@ body {
       font-size: 70px; }
       .page-slide-button i:nth-of-type(1) {
         left: 18px; } }
+
 .about-wrapper {
   width: 100%;
   height: auto; }
@@ -422,10 +439,11 @@ body {
   text-align: center;
   padding: 50px 0 0 0; }
 
-@media(min-width: 769px) {
+@media (min-width: 769px) {
   .about-display {
     padding: 20px 0 0 0;
     text-align: left; } }
+
 .gallery-text {
   width: 90%;
   height: auto;
@@ -443,7 +461,7 @@ body {
     font-size: 17px;
     font-weight: lighter;
     font-style: italic;
-    letter-spacing: 0.4px;
+    letter-spacing: .4px;
     line-height: 40px;
     z-index: 10; }
 
@@ -465,9 +483,10 @@ body {
   right: 0px;
   z-index: -1; }
 
-@media(min-width: 769px) {
+@media (min-width: 769px) {
   .qoute-two {
     right: 30px; } }
+
 .events-wrapper {
   width: 100%;
   height: 50vh;
@@ -519,13 +538,14 @@ body {
   opacity: 0;
   transition: all 1000ms ease-in-out; }
 
-@media(min-width: 769px) {
+@media (min-width: 769px) {
   .about-col-container {
     width: 32%;
     height: 100%;
     display: inline-block;
     vertical-align: top;
     padding: 0; } }
+
 .about-col-header {
   width: 95%;
   height: auto;
@@ -534,7 +554,7 @@ body {
   .about-col-header h2 {
     color: #535454;
     font-size: 24px;
-    font-family: "Abel"; }
+    font-family: 'Abel'; }
   .about-col-header p {
     width: 90%;
     color: rgba(40, 26, 23, 0.6);
@@ -585,9 +605,10 @@ body {
   min-height: 500px;
   padding: 40px 0 0 0; }
 
-@media(min-width: 769px) {
+@media (min-width: 769px) {
   .membership-join-wrapper {
     padding: 80px 0 0 0; } }
+
 .membership-header {
   width: 100%;
   height: 100%;
@@ -599,14 +620,14 @@ body {
   .membership-header h2 {
     color: #535454;
     font-size: 25px;
-    font-family: "Abel";
+    font-family: 'Abel';
     padding: 5px 0;
     letter-spacing: 2px; }
   .membership-header img {
     width: 70%;
     padding: 30px 0; }
 
-@media(min-width: 769px) {
+@media (min-width: 769px) {
   .membership-header {
     width: 49%;
     vertical-align: top;
@@ -616,6 +637,7 @@ body {
     .membership-header img {
       width: 50%;
       padding: 30px 0; } }
+
 .membership-slide-container {
   width: 100%;
   height: 100%;
@@ -633,7 +655,7 @@ body {
   padding: 0; }
   .membership-info h2 {
     color: #535454;
-    font-family: "Abel";
+    font-family: 'Abel';
     padding: 5px 0;
     letter-spacing: 2px; }
   .membership-info ul {
@@ -646,12 +668,13 @@ body {
     font-size: 14px;
     line-height: 30px; }
 
-@media(min-width: 769px) {
+@media (min-width: 769px) {
   .membership-info {
     width: 45%;
     display: inline-block;
     border-left: 1px solid #d2a26c;
     padding-left: 30px; } }
+
 .member-button {
   padding: 30px 0;
   text-align: center; }
@@ -676,9 +699,10 @@ body {
       padding: 10px 10px;
       letter-spacing: 1px; }
 
-@media(min-width: 769px) {
+@media (min-width: 769px) {
   .member-button {
     text-align: left; } }
+
 .border {
   width: 80%;
   margin: 0 auto;
@@ -698,7 +722,7 @@ body {
   .contacts-intro-display h2 {
     width: 80%;
     max-width: 769px;
-    font-family: "Abel";
+    font-family: 'Abel';
     padding: 10px 0;
     margin: 0 auto;
     border-bottom: 1px solid #d2a26c;
@@ -732,15 +756,17 @@ body {
       width: 100%;
       box-shadow: 0px 2px 5px #535454; }
 
-@media(min-width: 500px) {
+@media (min-width: 500px) {
   .contacts-intro-display h2 {
     font-size: 40px;
     padding: 30px 0; }
   .contacts-intro-display li {
     width: 50%; } }
-@media(min-width: 1000px) {
+
+@media (min-width: 1000px) {
   .contacts-intro-display li {
     width: 33.33%; } }
+
 .about-intro-wrapper {
   width: 100%;
   height: 40vh;
@@ -754,9 +780,10 @@ body {
   background-size: cover;
   z-index: 8; }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .about-intro-wrapper {
     height: 60vh; } }
+
 .about-intro-display {
   width: 100%;
   height: 100%;
@@ -766,7 +793,7 @@ body {
   .about-intro-display h2 {
     color: #e6e7e7;
     font-size: 60px;
-    font-family: "Abel";
+    font-family: 'Abel';
     font-weight: bold;
     display: block;
     text-shadow: 0 2px 5px #262626;
@@ -779,22 +806,24 @@ body {
     .about-intro-display h2.active-greet {
       transform: translateY(0); }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .about-intro-display h2 {
     font-size: 70px;
     position: absolute;
     bottom: 50px;
     left: 80px; } }
+
 .about-extended-wrapper {
   width: 100%;
   height: auto;
   position: relative; }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .about-extended-wrapper {
     width: 100%;
     height: auto;
     position: relative; } }
+
 .about-extended-display {
   width: 95%;
   height: 100%;
@@ -802,10 +831,11 @@ body {
   padding-top: 30px;
   margin: 0 auto; }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .about-extended-display {
     width: 85%;
     padding-top: 50px; } }
+
 .about-left-col {
   height: 100%;
   display: none;
@@ -816,7 +846,7 @@ body {
   .about-left-col h3 {
     color: #535454;
     font-size: 28px;
-    font-family: "Abel";
+    font-family: 'Abel';
     letter-spacing: 2px; }
   .about-left-col ul {
     width: 80%;
@@ -836,7 +866,7 @@ body {
       color: #d2a26c;
       font-weight: bold; }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .about-left-col {
     width: 35%;
     display: inline-block;
@@ -847,6 +877,7 @@ body {
       z-index: initial;
       opacity: 1;
       transition: all 250ms ease-in-out; } }
+
 .about-right-col {
   width: 100%;
   height: auto;
@@ -855,7 +886,7 @@ body {
   position: relative;
   text-align: center; }
   .about-right-col:after {
-    content: "";
+    content: '';
     border-bottom: 1px solid #d2a26c;
     padding-top: 25px;
     position: absolute;
@@ -865,7 +896,7 @@ body {
     width: 95%;
     color: #535454;
     font-size: 28px;
-    font-family: "Abel";
+    font-family: 'Abel';
     margin: 0 auto;
     letter-spacing: 1px; }
   .about-right-col p {
@@ -877,7 +908,7 @@ body {
     letter-spacing: 0.5px;
     line-height: 35px; }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .about-right-col {
     width: 55%;
     height: auto;
@@ -885,6 +916,7 @@ body {
     float: right;
     margin-right: 10%;
     text-align: center; } }
+
 .about-right-restorer {
   width: 100%;
   height: auto;
@@ -895,7 +927,7 @@ body {
     width: 95%;
     color: #535454;
     font-size: 28px;
-    font-family: "Abel";
+    font-family: 'Abel';
     margin: 0 auto;
     letter-spacing: 1px; }
   .about-right-restorer h3 {
@@ -911,7 +943,7 @@ body {
     padding: 25px 0;
     position: relative; }
     .about-right-restorer h3:after {
-      content: "";
+      content: '';
       display: block;
       border-bottom: 3px solid #d2a26c;
       width: 20px;
@@ -927,7 +959,7 @@ body {
     letter-spacing: 0.5px;
     line-height: 35px; }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .about-right-restorer {
     width: 55%;
     height: auto;
@@ -935,6 +967,7 @@ body {
     float: right;
     margin-right: 10%;
     text-align: center; } }
+
 .about-right-news {
   width: 100%;
   height: auto;
@@ -945,7 +978,7 @@ body {
     width: 95%;
     color: #535454;
     font-size: 28px;
-    font-family: "Abel";
+    font-family: 'Abel';
     margin: 0 auto;
     letter-spacing: 1px; }
   .about-right-news h3 {
@@ -961,7 +994,7 @@ body {
     padding: 25px 0;
     position: relative; }
     .about-right-news h3:after {
-      content: "";
+      content: '';
       display: block;
       border-bottom: 3px solid #d2a26c;
       width: 20px;
@@ -977,7 +1010,7 @@ body {
     letter-spacing: 0.5px;
     line-height: 35px; }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .about-right-news {
     width: 55%;
     height: auto;
@@ -985,6 +1018,7 @@ body {
     float: right;
     margin-right: 10%;
     text-align: center; } }
+
 .about-right-judge {
   width: 100%;
   height: auto;
@@ -995,7 +1029,7 @@ body {
     width: 95%;
     color: #535454;
     font-size: 28px;
-    font-family: "Abel";
+    font-family: 'Abel';
     margin: 0 auto;
     letter-spacing: 1px; }
   .about-right-judge h3 {
@@ -1011,7 +1045,7 @@ body {
     padding: 25px 0;
     position: relative; }
     .about-right-judge h3:after {
-      content: "";
+      content: '';
       display: block;
       border-bottom: 3px solid #d2a26c;
       width: 20px;
@@ -1027,7 +1061,7 @@ body {
     letter-spacing: 0.5px;
     line-height: 35px; }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .about-right-judge {
     width: 55%;
     height: auto;
@@ -1035,6 +1069,7 @@ body {
     float: right;
     margin-right: 10%;
     text-align: center; } }
+
 .about-right-events {
   width: 100%;
   height: auto;
@@ -1045,7 +1080,7 @@ body {
     width: 95%;
     color: #535454;
     font-size: 28px;
-    font-family: "Abel";
+    font-family: 'Abel';
     margin: 0 auto;
     letter-spacing: 1px; }
   .about-right-events h3 {
@@ -1061,7 +1096,7 @@ body {
     padding: 25px 0;
     position: relative; }
     .about-right-events h3:after {
-      content: "";
+      content: '';
       display: block;
       border-bottom: 3px solid #d2a26c;
       width: 20px;
@@ -1077,7 +1112,7 @@ body {
     letter-spacing: 1px;
     line-height: 35px; }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .about-right-events {
     width: 55%;
     height: auto;
@@ -1085,6 +1120,7 @@ body {
     float: right;
     margin-right: 10%;
     text-align: center; } }
+
 .future-intro-wrapper {
   width: 100%;
   height: auto; }
@@ -1100,9 +1136,10 @@ body {
   min-height: 500px;
   padding: 40px 0 0 0; }
 
-@media(min-width: 769px) {
+@media (min-width: 769px) {
   .future-wrapper {
     padding: 80px 0 0 0; } }
+
 .future-header {
   width: 100%;
   height: 100%;
@@ -1114,14 +1151,14 @@ body {
   .future-header h2 {
     color: #535454;
     font-size: 25px;
-    font-family: "Abel";
+    font-family: 'Abel';
     padding: 5px 0;
     letter-spacing: 2px; }
   .future-header img {
     width: 70%;
     padding: 30px 0; }
 
-@media(min-width: 769px) {
+@media (min-width: 769px) {
   .future-header {
     width: 48%;
     vertical-align: top;
@@ -1131,6 +1168,7 @@ body {
     .future-header img {
       width: 50%;
       padding: 30px 0; } }
+
 .future-slide-container {
   width: 100%;
   height: 100%;
@@ -1150,12 +1188,13 @@ body {
   position: relative;
   overflow: hidden; }
 
-@media(min-width: 769px) {
+@media (min-width: 769px) {
   .future-info-wrapper {
     width: 42%;
     display: inline-block;
     border-left: 1px solid #d2a26c;
     padding-left: 60px; } }
+
 .hotel-info-container {
   width: 100%;
   height: 100%;
@@ -1185,7 +1224,7 @@ body {
   .hotel-info-display h2 {
     color: #535454;
     font-size: 25px;
-    font-family: "Abel";
+    font-family: 'Abel';
     padding: 5px 0 5px 5px;
     letter-spacing: 2px; }
   .hotel-info-display h4 {
@@ -1219,13 +1258,13 @@ body {
   .future-info-display h2 {
     color: #535454;
     font-size: 25px;
-    font-family: "Abel";
+    font-family: 'Abel';
     padding: 5px 0 5px 5px;
     letter-spacing: 2px; }
   .future-info-display h3 {
     color: #535454;
     font-size: 20px;
-    font-family: "Abel";
+    font-family: 'Abel';
     letter-spacing: 2px;
     padding: 5px 0; }
   .future-info-display ul {
@@ -1242,9 +1281,10 @@ body {
     font-weight: normal;
     padding: 5px 0 5px 15px; }
 
-@media(min-width: 769px) {
+@media (min-width: 769px) {
   .future-info-display {
     width: 95%; } }
+
 .hotel {
   max-height: 25px;
   overflow: hidden;
@@ -1253,13 +1293,13 @@ body {
   .hotel h5 {
     color: #535454;
     font-size: 16px;
-    font-family: "Open Sans";
+    font-family: 'Open Sans';
     font-weight: bold;
     padding: 5px 0 5px 15px; }
   .hotel h4 {
     color: rgba(40, 26, 23, 0.6);
     font-size: 14px;
-    font-family: "Open Sans";
+    font-family: 'Open Sans';
     font-weight: normal;
     padding: 5px 0 5px 15px; }
 
@@ -1291,11 +1331,12 @@ body {
       background: #d2a26c;
       transform: translateY(-3px); }
 
-@media(min-width: 769px) {
+@media (min-width: 769px) {
   .future-button {
     text-align: left; }
     .future-button h2 {
       padding: 20px 0 25px 5px; } }
+
 .border {
   width: 80%;
   margin: 0 auto;
@@ -1331,10 +1372,11 @@ body {
   .thumbnail img {
     width: 100%; }
 
-@media(min-width: 820px) {
+@media (min-width: 820px) {
   .thumbnail {
     width: 30%;
     margin: 20px 1.66%; } }
+
 .upload-container {
   width: 100%;
   height: auto; }
